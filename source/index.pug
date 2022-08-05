@@ -5,22 +5,6 @@ html(lang='ru')
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= title
-    //- script
-    //-   | let script_str = ''
-    //-   | let styles_str = ''
-    //-   | let scrypt_arr = ['hystmodal.js', 'modal.js', 'tg.js', 'scroll.js']
-    //-   | let styles_arr = ['style.scss', 'hystmodal.scss', ]
-    //-   | let head_box = document.querySelector('head')
-    //-   | let titile_text = head_box.getElementsByTagName('title')[0].innerText
-    //-   | console.log(head_box.getElementsByTagName('title')[0].innerText)
-    //-   | if (titile_text == 'Development')
-    //-   |   for (item of styles_arr)
-    //-   |     styles_str += `link(rel="stylesheet" href="${item}")<br>`
-    //-   |   head_box.innerHTML += styles_str
-    //-   |   for (item of scrypt_arr)
-      //- |     script_str += `script(src="/scrypts/${item}")<br>`
-      //- |     script_str += `<script>`src="/scrypts/${item}"`</script>`
-      //- |     head_box.innerHTML += script_str
   body 
     header 
       include parts/header.pug
@@ -31,12 +15,13 @@ html(lang='ru')
         section(class='section section_one' id="home")
           div(class='section_content')
             div(class='section_content_info')
-              h1 Forge your firepower
-              h2 All-new G604 for battle royale mastery, focus your skill a nd own every moment of the figth.
-              p Маkе your weapons play harder in the configuration you deem fittest. Use the 15 programmable controls, LIGHTSPEED or Bluetooth® wireless, HERO 16K sensor, and 240 hour battery life to be the fastest gunslinger on the battlefield.
-              button(class='bn5') Play Advanced
+              h1 Ремонт дисплея Вашего Macbook
+              h2 Нужен ремонт дисплея или замена матрицы Macbook?
+              p Мы поможем Вам значительно сэкономить на замене дисплея. В типовых поломках мы не прибегаем к банальной замене дисплея в сборе с крышкой, так как это весьма дорогостоящая процедура. Именно поэтому мы разработали технологию, которая в совокупности с уникальным оборудованием позволяет нам именно ремонтировать дисплей вашего Macbook, без замены всего дисплея, что сокращает стоимость ремонта почти в два раза!
+              button(class='bn5') Ничего не понятно
             div(class='section_content_image')
-              img(src="example_one.png" alt="")
+              img(src="macbook.png" alt="")
+              img(class="bg_image" src="kenny.png" alt="")
           div(class='section_navbar_rigth')
             div(class='vertical_line')
             div(class='section_navbar')
@@ -50,11 +35,41 @@ html(lang='ru')
         section(class='section section_two' id="about")
           div(class='section_content')
             div(class='section_content_image')
-              img(src="example_two.png" alt="")
+              img(src="macbook.png" alt="")
+              img(id='bg_image' class="bg_image" src="kenny.png" alt="")
+              //- img(
+              //-   src="example_two.png" 
+              //-   alt=""
+              //-   )
             div(class='section_content_info')
-              h1 Make your play
-              p Маkе your weapons play harder in the configuration you deem fittest. Use the 15 programmable controls, LIGHTSPEED or Bluetooth® wireless, HERO 16K sensor, and 240 hour battery life to be the fastest gunslinger on the battlefield.
-              button(class='bn5') Buy
+              h1 Выберите свою поломку
+              //- p Маkе your weapons play harder in the configuration you deem fittest. Use the 15 programmable controls, LIGHTSPEED or Bluetooth® wireless, HERO 16K sensor, and 240 hour battery life to be the fastest gunslinger on the battlefield.
+              ul(class='defect_list')
+                li(id='kenny_stripes')
+                  h3 Полосы на дисплее
+                  hr
+                  //- p Пропадает изображение и/или появляются полосы при открытии крышки. Картинка пропадает, дрожит, дергается или вообще отсутствует. Характерные широкие равномерные полосы на матрице
+                  p Пропадает изображение и/или появляются полосы при открытии крышки
+                li(id='kenny_picture')
+                  h3 Черный экран
+                  hr
+                  p Дисплей не показывает, нет изображения и нет подсветки
+                li(id='kenny_facetime')
+                  h3 На работает камера
+                  hr
+                  p При попытке включения камеры выдает ошибку
+                li(id='kenny_backlight')
+                  h3 На подсветке пятна
+                  hr
+                  p После попадания влаги появились пятна и потеки на экране
+                li(id='kenny_broken')
+                  h3 Разбита матрица
+                  hr
+                  p Изображение отсутствует или размыто. Появились полосы и пятна
+                //- li 
+                //-   h3 Треснула зажитная планка. Порвалась резинка дисплея. Болтаются петли.
+                //-   p На стеклянной накладке появились трещины. Резинка дисплея порвалась или стерлась. Верхняя плохо держится и болтается
+              button(class='bn5 buy_order' data-hystmodal="#modal_order") Оставить заявку
         section(class='section section_detalis' id="product")
           ul(class="slider")
             li
@@ -140,5 +155,6 @@ html(lang='ru')
       //- include parts/modal.pug
       //- include parts/form.pug
       include parts/footer.pug
-      include parts/modal.pug
+  include parts/modal.pug
+  include parts/modal_order.pug
 

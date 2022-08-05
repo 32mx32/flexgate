@@ -11,20 +11,30 @@ import "./images/logos/logo_whatsapp.svg";
 import "./images/logos/logo_telegram.svg";
 import "./images/logos/logo_instagram.svg";
 
-import "./images/slider_00.png";
-import "./images/slider_01.png";
-import "./images/slider_02.png";
-import "./images/slider_03.png";
-import "./images/slider_04.png";
+import "./images/slider/slider_00.png";
+import "./images/slider/slider_01.png";
+import "./images/slider/slider_02.png";
+import "./images/slider/slider_03.png";
+import "./images/slider/slider_04.png";
 
 import "./images/arrow.svg";
-import "./images/example_one.png";
+import "./images/macbook.png";
 import "./images/example_two.png";
 import "./images/logos/telephone.svg";
 import "./images/logos/telegram.svg";
 import "./images/logos/whatsapp.svg";
 import "./images/yandex_maps.jpg";
 import "./images/yandex_maps.webp";
+import "./images/kenny.png";
+import "./images/kenny_stripes.png";
+import "./images/kenny_picture.png";
+import "./images/kenny_facetime.png";
+import "./images/kenny_backlight.png";
+import "./images/kenny_broken.png";
+
+
+
+
 
 // import "./styles/hystmodal.min.css";
 

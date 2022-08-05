@@ -28,6 +28,7 @@ const productionConfig = merge([
       ],
       other: [
         PATHS.source + "/scripts/scroll.js",
+        PATHS.source + "/scripts/select_defect",
       ]
     },
     output: {
