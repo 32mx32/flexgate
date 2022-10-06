@@ -9,11 +9,16 @@ $style_color: #DB722D //-6ae0fb
 
 %section
     // height: 100vh
+    // min-height: 100vh
     // display: flex
     // justify-content: center
     // align-items: center
     // scroll-snap-align: start
+    width: 100%
     opacity: 1
+    // border: 2px solid rgba(255, 255, 255, 0.9);
+    // padding: 10px 0
+    // margin: 50px 0
 
 *
     margin: 0
@@ -39,7 +44,7 @@ body
     background-color: $body_background_color
     width: 1350px
     margin: 0 auto
-    grid-template-areas: "header header" "aside main" "footer footer"
+    grid-template-areas: "header header" "main main" "footer footer"
     color: #fff
 
 header
@@ -107,7 +112,10 @@ aside
     top: 60px
     height: 100%
     width: $aside_width
-    grid-area: aside
+    // position: sticky;
+    // top: 0;
+    // height: 100vh;
+    // grid-area: aside
     .navbar_left
         display: grid
         grid-template-columns: 50% 50%
@@ -165,7 +173,6 @@ aside
                 margin-right: 2px
 
 main
-    // display: none
     grid-area: main
     width: 100%
 
@@ -234,32 +241,38 @@ main
                             img
                                 width: 15px
                                 opacity: 0.8
+        
         .section_two
+            width: 
             @extend %section
             display: grid
             grid-template-columns: 100%
-            // background-color: #252628
-            padding-left: $aside_width
+            padding-left: $aside_width - 100
             .section_content
                 display: grid
                 grid-template-columns: 50% auto
                 align-items: center
                 scroll-snap-align: start
-                .section_content_image
-                    text-align: center
-                    padding: 50% 0 0 0
-                    img
-                        max-width: 100%
-                        // width: 600px
-                    img.bg_image
-                        max-width: 100%
-                        position: relative
-                        // bottom: 54%
-                        bottom: 375px
-                        z-index: -1
-                        width: 80%
                 .section_content_info
-                    padding: 15% 30% 20% 0
+                    .section_content_image
+                        text-align: center
+                        padding: 50% 0 0 0
+                        img
+                            max-width: 100%
+                            // width: 600px
+                        img.bg_image
+                            max-width: 100%
+                            position: relative
+                            // bottom: 54%
+                            bottom: 375px
+                            z-index: -1
+                            width: 80%
+                    .section_content_decr
+                        h3
+                            font-size: 20px
+                .section_select_order
+                    // padding: 15% 30% 20% 0
+                    padding: 0px 60px;
                     h1
                         font-size: 35px
                         text-transform: uppercase
@@ -298,10 +311,10 @@ main
 
                             h3
                                 // color: $style_color
-                                
+
                             p
                                 opacity: 0.8
-                
+
                             hr
                                 background-color: aliceblue
                                 height: 1px
@@ -316,23 +329,31 @@ main
                         border: 2px solid $style_color
                         margin-top: 5%
                         text-transform: uppercase
+        
         .section_detalis
             display: grid
             width: 100%
             height: 400px
-            background-color: gray
+            // background-color: gray
+            background-color: rgba(17, 20, 22, 0.8)
             position: relative
             align-items: center
             justify-items: center
             .slider
                 display: grid
-                grid-template-columns: repeat(5, 1fr)
+                grid-template-columns: repeat(4, 1fr)
+                grid-template-rows: 5% 95%
                 grid-column-gap: 20px
+                li
+                    img
+                        // transform: rotate(90deg)
+                        opacity: 0.5
         .section_three
             @extend %section
             // height: 200vh
             display: grid
-            grid-template-columns: 100%
+            grid-template-columns: 90% auto
+            grid-template-rows: 5% 95%
             background-color: #0b0c0d
             padding-left: $aside_width
             .section_content
@@ -415,6 +436,11 @@ footer
                 grid-row-end: 1
                 margin-bottom: 15px
                 font-size: 23px
+            ul
+                line-height: 20px
+                li
+                    a
+                        color: #fff
         .footer_content_image
             display: grid
             text-align: center
@@ -423,9 +449,9 @@ footer
                 width: 85%
                 height: auto
                 border-radius: 5px
-        .footer_content_copyright
+        .footer_content_media
             display: grid
-            grid-template-columns: 30% 21% 20% 38%
+            grid-template-columns: repeat(3, 1fr)
             justify-items: center
             align-items: center
             grid-column-start: 1
@@ -433,13 +459,6 @@ footer
             align-items: center
             width: 100%
             margin-top: 40px
-            .footer_copyright_list
-                display: grid
-                grid-template-columns: 80% auto
-                align-items: baseline
-                li
-                    span
-                        font-size: 19px
             .footer_bank_list
                 li
                     background-color: #fff
@@ -476,3 +495,18 @@ footer
                     img
                         max-height: 100%
                         width: auto
+
+    .footer_info
+        p
+            text-align: center
+            font-size: 11px
+            width: 83%
+            font-weight: 300
+            line-height: 14px
+            margin: 15px auto;
+    .footer_copyright
+        p
+            text-align: center
+            font-size: 12px
+            span
+                font-size: 12px
