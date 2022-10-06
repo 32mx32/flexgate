@@ -3,7 +3,7 @@
 ## Приступая к работе
 Сперва необходимо склонировать проект командой 
 ```
-git@github.com:AlexeyMilenkiy/flexgate.git
+git@github.com:32mx32/flexgate.git
 ```
 В проекте есть две основные директории: `client` и `server`.
 
