@@ -5,6 +5,22 @@ html(lang='ru')
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= title
+    //- script
+    //-   | let script_str = ''
+    //-   | let styles_str = ''
+    //-   | let scrypt_arr = ['hystmodal.js', 'modal.js', 'tg.js', 'scroll.js']
+    //-   | let styles_arr = ['style.scss', 'hystmodal.scss', ]
+    //-   | let head_box = document.querySelector('head')
+    //-   | let titile_text = head_box.getElementsByTagName('title')[0].innerText
+    //-   | console.log(head_box.getElementsByTagName('title')[0].innerText)
+    //-   | if (titile_text == 'Development')
+    //-   |   for (item of styles_arr)
+    //-   |     styles_str += `link(rel="stylesheet" href="${item}")<br>`
+    //-   |   head_box.innerHTML += styles_str
+    //-   |   for (item of scrypt_arr)
+      //- |     script_str += `script(src="/scrypts/${item}")<br>`
+      //- |     script_str += `<script>`src="/scrypts/${item}"`</script>`
+      //- |     head_box.innerHTML += script_str
   body 
     header 
       include parts/header.pug
@@ -13,15 +29,116 @@ html(lang='ru')
     main
       article  
         section(class='section section_one' id="home")
-          include parts/section_one.pug
-        section(class='section section_two' id="order")
-          include parts/section_two.pug
-        section(class='section section_three' id="info")
-          include parts/section_three.pug
-        section(class='section section_four' id="about")
-          h1 hello
-    footer
+          div(class='section_content')
+            div(class='section_content_info')
+              h1 Forge your firepower
+              h2 All-new G604 for battle royale mastery, focus your skill a nd own every moment of the figth.
+              p Маkе your weapons play harder in the configuration you deem fittest. Use the 15 programmable controls, LIGHTSPEED or Bluetooth® wireless, HERO 16K sensor, and 240 hour battery life to be the fastest gunslinger on the battlefield.
+              button(class='bn5') Play Advanced
+            div(class='section_content_image')
+              img(src="example_one.png" alt="")
+          div(class='section_navbar_rigth')
+            div(class='vertical_line')
+            div(class='section_navbar')
+              ul 
+                li 
+                  img(src="telephone.svg" alt="Call")
+                li 
+                  img(src="telegram.svg" alt="Telegram")
+                li  
+                  img(src="whatsapp.svg" alt="Whatsapp")
+        section(class='section section_two' id="about")
+          div(class='section_content')
+            div(class='section_content_image')
+              img(src="example_two.png" alt="")
+            div(class='section_content_info')
+              h1 Make your play
+              p Маkе your weapons play harder in the configuration you deem fittest. Use the 15 programmable controls, LIGHTSPEED or Bluetooth® wireless, HERO 16K sensor, and 240 hour battery life to be the fastest gunslinger on the battlefield.
+              button(class='bn5') Buy
+        section(class='section section_detalis' id="product")
+          ul(class="slider")
+            li
+              img(
+                src="slider_00.png" 
+                width="250px"
+                height="250px"
+                alt="Google Maps"
+                loading="lazy"
+                )
+            li
+              img(
+                src="slider_01.png" 
+                width="250px"
+                height="250px"
+                alt="Google Maps"
+                loading="lazy"
+                )
+            li
+              img(
+                src="slider_02.png" 
+                width="250px"
+                height="250px"
+                alt="Google Maps"
+                loading="lazy"
+                )
+            li
+              img(
+                src="slider_03.png" 
+                width="250px"
+                height="250px"
+                alt="Google Maps"
+                loading="lazy"
+                )
+            li
+              img(
+                src="slider_04.png" 
+                width="250px"
+                height="250px"
+                alt="Google Maps"
+                loading="lazy"
+                )
+        section(class='section section_three' id="specification")
+          div(class='section_content')
+            ul 
+              li 
+                img(src="example_one.png" width="300px" alt="")
+                span(class="section_inline_dot_contur") 
+                  span(class="section_inline_dot")
+                dir(class="vertical_line")
+                div(class='section_content_info')
+                  h3 15 Programmable controls
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, odit labore praesentium est voluptatum facere ducimus. Magni, soluta omnis ullam adipisci iure culpa dolore ipsam tempore sunt architecto expedita voluptas.
+              li 
+                img(src="example_one.png" width="300px" alt="")
+                span(class="section_inline_dot_contur") 
+                  span(class="section_inline_dot")
+                dir(class="vertical_line")
+                div(class='section_content_info') 
+                  h3 15 Programmable controls
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, odit labore praesentium est voluptatum facere ducimus. Magni, soluta omnis ullam adipisci iure culpa dolore ipsam tempore sunt architecto expedita voluptas.
+              li 
+                img(src="example_one.png" width="300px" alt="")
+                span(class="section_inline_dot_contur") 
+                  span(class="section_inline_dot")
+                div(class="vertical_line")
+                div(class='section_content_info') 
+                  h3 15 Programmable controls
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, odit labore praesentium est voluptatum facere ducimus. Magni, soluta omnis ullam adipisci iure culpa dolore ipsam tempore sunt architecto expedita voluptas.
+              li 
+                img(src="example_one.png" width="300px" alt="")
+                span(class="section_inline_dot_contur") 
+                  span(class="section_inline_dot")
+                div(class="vertical_line hide_line")
+                div(class='section_content_info') 
+                  h3 15 Programmable controls
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, odit labore praesentium est voluptatum facere ducimus. Magni, soluta omnis ullam adipisci iure culpa dolore ipsam tempore sunt architecto expedita voluptas.
+              li(class="single_block")
+                button(class="bn5") Buy Now
+        //- section 
+        //- какие модели подходят и какой список услуг(это для SEO)
+    footer 
+      //- include parts/modal.pug
+      //- include parts/form.pug
       include parts/footer.pug
-  include parts/modal.pug
-  include parts/modal_order.pug
+      include parts/modal.pug
 

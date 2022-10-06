@@ -8,8 +8,6 @@ module.exports = () => {
           // type: 'asset/resource',
           options: {
             name: "[name].[ext]",
-            // publicPath: "/source",
-            // useRelativePaths: true,
           },
         },
       ],
