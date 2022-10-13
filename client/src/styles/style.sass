@@ -82,16 +82,23 @@ body
         section#home
             display: grid
             grid-template-columns: 1fr
-            grid-template-rows: 3fr 1fr
+            grid-template-rows: 4fr 1fr
             align-items: center
             justify-items: center
             div.home_content
                 display: grid
                 align-self: end
                 justify-items: center
-                img
+                position: relative
+                img.home_content_title
                     width: 968px
                     height: 569px
+                img.home_content_defect
+                    display: none
+                    position: absolute
+                    width: 912px
+                img.home_content_defect.active
+                    display: block
                 div.home_content_info
                     display: grid
                     grid-template-columns: 1fr 5fr
@@ -109,7 +116,9 @@ body
                         text-transform: uppercase
                         z-index: 1
                         color: #EB5B00
-                    p
+                    p.home_content_descr
+                        display: none
+                    p.home_content_descr.active
                         display: grid
                         align-items: center
                         font-size: 11px
@@ -153,6 +162,9 @@ body
                         &:hover
                             border: solid 1px #ED5900
                             background: #000
+                    li.active
+                        border: solid 1px #ED5900
+                        background: #000
         section#questions
             display: grid
             grid-template-columns: 1fr

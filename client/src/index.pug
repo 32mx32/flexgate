@@ -29,54 +29,66 @@ html(lang='ru')
       article  
         section#home
           div.home_content
-            img(src="Group 210.jpg" loading="lazy" alt="Macbook Pro")
+            img.home_content_title(src="macbook.png" loading="lazy" alt="Macbook Pro")
+
+            img.home_content_defect.active(src="kenny.png" id="kenny" loading="lazy" alt="Kenny")
+            img.home_content_defect(src="kenny2.png" id="kenny2" loading="lazy" alt="Kenny")
+            img.home_content_defect(src="kenny3.png" id="kenny3" loading="lazy" alt="Kenny")
+            img.home_content_defect(src="kenny4.png" id="kenny4" loading="lazy" alt="Kenny")
+            img.home_content_defect(src="kenny5.png" id="kenny5" loading="lazy" alt="Kenny")
+            
             div.home_content_info
               button.bn5 Заказать
-              p На дисплее Macbook появились полосы, иногда, если закрывать крышку, полосы пропадают...
+              p(class="home_content_descr active" descr="kenny") На дисплее Macbook появились полосы, иногда, если закрывать крышку, полосы пропадают...
+              p(class="home_content_descr" descr="kenny2") Macbook появилис Macbook появилис Macbook появилис Macbook появилис Macbook появилис
+              p(class="home_content_descr" descr="kenny3") полосы, иногда полосы, иногда полосы, иногда полосы, иногда полосы, иногда полосы, иногда
+              p(class="home_content_descr" descr="kenny4") если закрывать если закрывать если закрывать если закрывать если закрывать если закрывать
+              p(class="home_content_descr" descr="kenny5") рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают
+
           div.home_selector
             ul
-              li Полосы на экране
-              li Залита подсветка
-              li Разбита матрица
-              li Проблема камеры
-              li Нет изображения
+              li(class="home_defect_button active" defect="kenny") Полосы на экране
+              li(class="home_defect_button" defect="kenny2") Залита подсветка
+              li(class="home_defect_button" defect="kenny3") Разбита матрица
+              li(class="home_defect_button" defect="kenny4") Проблема камеры
+              li(class="home_defect_button" defect="kenny5") Нет изображения
         section#questions
           div.questions_content
             ul
               li
-                img(src="Squircle.svg" loading="lazy" alt="Question Card")
+                img(src="squircle.svg" loading="lazy" alt="Question Card")
                 img.questions_user(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
                 h3 
                   p У сына на экране Macbook появились полосы
                   br
                   span Все дело в шлейфах, которые находятся на сгибе дисплея. Из-за попадания крошек и групных частиц пыли шлейфа ломаются. Это распространенная проблема экрана Macbook под названием Flexgate. Мы можем заменить эти шлейфа, без замены дисплея, и вы сможете сэкономить до 30000
               li
-                img(src="Squircle.svg" loading="lazy" alt="Question Card")
+                img(src="squircle.svg" loading="lazy" alt="Question Card")
                 img.questions_user(src="doc.png" loading="lazy" alt="Doc")
                 h3 
                   p Это невозможно! Как вы это делаете?
                   br
                   span Раньше при любой поломке экрана Macbook приходилось менять дисплей с крышкой целиком - а это больше половины стоимости самого Macbook. Поэтому мы разработали технологию, и теперь мы можем производить именно ремонт дисплея Macbook, а не менять его. Это существенно сокращает стоимость и сроки
               li
-                img(src="Squircle.svg" loading="lazy" alt="Question Card")
+                img(src="squircle.svg" loading="lazy" alt="Question Card")
                 img.questions_user(src="smegol.png" loading="lazy" alt="Smegol")
                 h3 У моей прелести разбился экран, что мне теперь делать?
                   br
                   span Вместо замены дисплея целиком, мы можем заменить только матрицу Macbook. При этом все компоненты дисплея остаются родные, а значит будет работать TrueTone и подсветка клавиатуры. Вам не нужно будет ждать несколько недель, замена матрицы производится в течении одного дня
               li
-                img(src="Squircle.svg" loading="lazy" alt="Question Card")
+                img(src="squircle.svg" loading="lazy" alt="Question Card")
                 img.questions_user(src="storm_trooper.png" loading="lazy" alt="Storm Trooper")
                 h3 Сломал начальнику макбук, теперь там черный экран, помогите...
                   br
                   span При переломе шлейфа, который находится в крышке дисплея Macbook, могут появляться “волны” на подсветке, подсветка становится тусклой и неравномерной. При открытии дисплея или в разных положениях подсветка может пропадать. Нет необходимости менять экран целиком. Можно поменять отдельно шлейф подсветки на вашем Macbook в течении четырех часов
               li
-                img(src="Squircle.svg" loading="lazy" alt="Question Card")
+                img(src="squircle.svg" loading="lazy" alt="Question Card")
                 img.questions_user(src="dimon.png" loading="lazy" alt="Dimon")
                 h3 От друзей остался Macbook, у него не работает камера
                   br
                   span Скорее всего переломился шлейф, который отвечает за работу камеры на Macbook. При этом камера может периодически работать, а потом и вовсе перестать. Мы меняем шлейф камеры макбука и шлейф подсветки парой, чтобы исключить проблемы с подсветкой в дальнейшем
               li
-                img(src="Squircle.svg" loading="lazy" alt="Question Card")
+                img(src="squircle.svg" loading="lazy" alt="Question Card")
                 img.questions_user(src="marilyn.png" loading="lazy" alt="Marilyn")
                 h3 В самолете залили экран Макбука, что можно сделать?
                   br
@@ -210,16 +222,15 @@ html(lang='ru')
                 p Задать вопрос
                 form(id="telegram_form")
                   div(class="user_box")
-                    input(type="text" name="name" maxlength="20" required="")
-                    label Ваше имя
+                    input(type="text" name="name" placeholder="Ваше имя" maxlength="20" required="")
+                    //- label Ваше имя
                   div(class="user_box")
-                    input(type="tel" name="phone" maxlength="20" required="")
-                    label Телефон
+                    input(type="tel" name="phone" placeholder="Телефон" maxlength="20" required="")
+                    //- label Телефон
                   div(class="user_box")
-                    input(type="text" name="message" maxlength="80" required="")
-                    label Сообщение
+                    input(type="text" name="message" placeholder="Сообщение" maxlength="80" required="")
+                    //- label Сообщение
                   button(class="sendform_button" type="submit" title="Отправляя форму, вы даете согласие на обработку своих данных") Отправить
-
     footer 
       div.footer_content
         p.footer_descript
