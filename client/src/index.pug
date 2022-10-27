@@ -1,11 +1,37 @@
+- const TITLE = "Замена и ремонт матрицы дисплея (экрана) Macbook и iMac в Ростове-на-Дону - Сервисный центр Apple";
+- const DESCRIPTION = "😊 Замена матрицы дисплея Macbook. Замена шлефов матрицы (Flrxgate), замена и ремонт подсветки. Ремонт дисплея Macbook. Замена стекла iMac";
+- const OG_IMAGE = "https://flaxgate.ru/hand-phone.jpg"
+- const OG_SITENAME = "Ремонт дисплея и замена матрицы Macbook и iMac"
+
 doctype html
 html(lang='ru')
   head
     meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    title= TITLE
+    meta(name="description" content= DESCRIPTION)
+    meta(name="robots" content="index, follow")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title= title
-  body 
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:title" content= TITLE)
+    meta(name="twitter:description" content= DESCRIPTION)
+    meta(name="twitter:image" content= OG_IMAGE)
+    meta(name="og:url" content="https://flexgate.ru")
+    meta(name="og:type" content="website")
+    meta(name="og:site_name" content= OG_SITENAME)
+    meta(name="og:title" content= TITLE)
+    meta(name="og:description" content= DESCRIPTION)
+    meta(name="og:image" content= OG_IMAGE)
+    meta(name="og:image:width" content="1120")
+    meta(name="og:image:height" content="584")
+    meta(name="og:locale" content="ru_RU")
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    //- <meta name="apple-mobile-web-app-capacity" content="yes">
+    //- <meta name="apple-mobile-web-app-capable" content="yes">
+    //- <meta name="apple-mobile-web-app-title" content="myMac">
+    //- <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    //- <meta name="apple-touch-fullscreen" content="yes">
+    //- <meta name="application-name" content="flexGate">
+  body(translate="no")
     header 
       div.header_left
         a(href="#home")
@@ -26,211 +52,207 @@ html(lang='ru')
       div.header_rigth
         img(src="headerdot.svg" loading="lazy" alt="Mobile Menu")
     main
-      article  
-        section#home
-          div.home_content
-            img.home_content_title(src="macbook.png" loading="lazy" alt="Macbook Pro")
-
-            img.home_content_defect.active(src="kenny.png" id="kenny" loading="lazy" alt="Kenny")
-            img.home_content_defect(src="kenny2.png" id="kenny2" loading="lazy" alt="Kenny")
-            img.home_content_defect(src="kenny3.png" id="kenny3" loading="lazy" alt="Kenny")
-            img.home_content_defect(src="kenny4.png" id="kenny4" loading="lazy" alt="Kenny")
-            img.home_content_defect(src="kenny5.png" id="kenny5" loading="lazy" alt="Kenny")
-            
-            div.home_content_info
-              button.bn5 Заказать
-              p(class="home_content_descr active" descr="kenny") На дисплее Macbook появились полосы, иногда, если закрывать крышку, полосы пропадают...
-              p(class="home_content_descr" descr="kenny2") Macbook появилис Macbook появилис Macbook появилис Macbook появилис Macbook появилис
-              p(class="home_content_descr" descr="kenny3") полосы, иногда полосы, иногда полосы, иногда полосы, иногда полосы, иногда полосы, иногда
-              p(class="home_content_descr" descr="kenny4") если закрывать если закрывать если закрывать если закрывать если закрывать если закрывать
-              p(class="home_content_descr" descr="kenny5") рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают
-
-          div.home_selector
-            ul
-              li(class="home_defect_button active" defect="kenny") Полосы на экране
-              li(class="home_defect_button" defect="kenny2") Залита подсветка
-              li(class="home_defect_button" defect="kenny3") Разбита матрица
-              li(class="home_defect_button" defect="kenny4") Проблема камеры
-              li(class="home_defect_button" defect="kenny5") Нет изображения
-        section#questions
-          div.questions_content
-            ul
-              li
-                img(src="squircle.svg" loading="lazy" alt="Question Card")
-                img.questions_user(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
-                h3 
-                  p У сына на экране Macbook появились полосы
-                  br
-                  span Все дело в шлейфах, которые находятся на сгибе дисплея. Из-за попадания крошек и групных частиц пыли шлейфа ломаются. Это распространенная проблема экрана Macbook под названием Flexgate. Мы можем заменить эти шлейфа, без замены дисплея, и вы сможете сэкономить до 30000
-              li
-                img(src="squircle.svg" loading="lazy" alt="Question Card")
-                img.questions_user(src="doc.png" loading="lazy" alt="Doc")
-                h3 
-                  p Это невозможно! Как вы это делаете?
-                  br
-                  span Раньше при любой поломке экрана Macbook приходилось менять дисплей с крышкой целиком - а это больше половины стоимости самого Macbook. Поэтому мы разработали технологию, и теперь мы можем производить именно ремонт дисплея Macbook, а не менять его. Это существенно сокращает стоимость и сроки
-              li
-                img(src="squircle.svg" loading="lazy" alt="Question Card")
-                img.questions_user(src="smegol.png" loading="lazy" alt="Smegol")
-                h3 У моей прелести разбился экран, что мне теперь делать?
-                  br
-                  span Вместо замены дисплея целиком, мы можем заменить только матрицу Macbook. При этом все компоненты дисплея остаются родные, а значит будет работать TrueTone и подсветка клавиатуры. Вам не нужно будет ждать несколько недель, замена матрицы производится в течении одного дня
-              li
-                img(src="squircle.svg" loading="lazy" alt="Question Card")
-                img.questions_user(src="storm_trooper.png" loading="lazy" alt="Storm Trooper")
-                h3 Сломал начальнику макбук, теперь там черный экран, помогите...
-                  br
-                  span При переломе шлейфа, который находится в крышке дисплея Macbook, могут появляться “волны” на подсветке, подсветка становится тусклой и неравномерной. При открытии дисплея или в разных положениях подсветка может пропадать. Нет необходимости менять экран целиком. Можно поменять отдельно шлейф подсветки на вашем Macbook в течении четырех часов
-              li
-                img(src="squircle.svg" loading="lazy" alt="Question Card")
-                img.questions_user(src="dimon.png" loading="lazy" alt="Dimon")
-                h3 От друзей остался Macbook, у него не работает камера
-                  br
-                  span Скорее всего переломился шлейф, который отвечает за работу камеры на Macbook. При этом камера может периодически работать, а потом и вовсе перестать. Мы меняем шлейф камеры макбука и шлейф подсветки парой, чтобы исключить проблемы с подсветкой в дальнейшем
-              li
-                img(src="squircle.svg" loading="lazy" alt="Question Card")
-                img.questions_user(src="marilyn.png" loading="lazy" alt="Marilyn")
-                h3 В самолете залили экран Макбука, что можно сделать?
-                  br
-                  span Если после попадания влаги на экран Macbook появились разводы и потеки на подсветке, значит влага попала в светорассеивающие пленки, отражатель и световод - все это можно поменять без замены дисплея в течении одного дня. В подарок вы получите полную чистку вашего Макбука внутри и снаружи
-        section#compare
-          div.compare_content
-            ul.compare_list
-              li.compare_list_title
+      section#home
+        div.home_content
+          img.home_content_title(src="macbook.png" loading="lazy" alt="Macbook Pro")
+          img(class="home_content_defect active" src="kenny.png" id="kenny" loading="lazy" alt="Kenny")
+          img(class="home_content_defect" src="kenny2.png" id="kenny2" loading="lazy" alt="Kenny")
+          img(class="home_content_defect" src="kenny3.png" id="kenny3" loading="lazy" alt="Kenny")
+          img(class="home_content_defect" src="kenny4.png" id="kenny4" loading="lazy" alt="Kenny")
+          img(class="home_content_defect" src="kenny5.png" id="kenny5" loading="lazy" alt="Kenny")
+          div.home_content_info
+            button#home_buy_button.bn5 Заказать
+            p(class="home_content_descr active" descr="kenny") На дисплее Macbook появились полосы, иногда, если закрывать крышку, полосы пропадают...
+            p(class="home_content_descr" descr="kenny2") Macbook появилис Macbook появилис Macbook появилис Macbook появилис Macbook появилис
+            p(class="home_content_descr" descr="kenny3") полосы, иногда полосы, иногда полосы, иногда полосы, иногда полосы, иногда полосы, иногда
+            p(class="home_content_descr" descr="kenny4") если закрывать если закрывать если закрывать если закрывать если закрывать если закрывать
+            p(class="home_content_descr" descr="kenny5") рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают
+        div.home_selector
+          ul
+            li(class="home_defect_button active" defect="kenny") Полосы на экране
+            li(class="home_defect_button" defect="kenny2") Залита подсветка
+            li(class="home_defect_button" defect="kenny3") Разбита матрица
+            li(class="home_defect_button" defect="kenny4") Проблема камеры
+            li(class="home_defect_button" defect="kenny5") Нет изображения
+      section#questions
+        div.questions_content
+          ul
+            li.element_animation
+              img(src="squircle.svg" loading="lazy" alt="Question Card")
+              img.questions_user(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
+              h3 
+                p У сына на экране Macbook появились полосы
+                br
+                span Все дело в шлейфах, которые находятся на сгибе дисплея. Из-за попадания крошек и групных частиц пыли шлейфа ломаются. Это распространенная проблема экрана Macbook под названием Flexgate. Мы можем заменить эти шлейфа, без замены дисплея, и вы сможете сэкономить до 30000
+            li.element_animation
+              img(src="squircle.svg" loading="lazy" alt="Question Card")
+              img.questions_user(src="doc.png" loading="lazy" alt="Doc")
+              h3 
+                p Это невозможно! Как вы это делаете?
+                br
+                span Раньше при любой поломке экрана Macbook приходилось менять дисплей с крышкой целиком - а это больше половины стоимости самого Macbook. Поэтому мы разработали технологию, и теперь мы можем производить именно ремонт дисплея Macbook, а не менять его. Это существенно сокращает стоимость и сроки
+            li.element_animation
+              img(src="squircle.svg" loading="lazy" alt="Question Card")
+              img.questions_user(src="smegol.png" loading="lazy" alt="Smegol")
+              h3 У моей прелести разбился экран, что мне теперь делать?
+                br
+                span Вместо замены дисплея целиком, мы можем заменить только матрицу Macbook. При этом все компоненты дисплея остаются родные, а значит будет работать TrueTone и подсветка клавиатуры. Вам не нужно будет ждать несколько недель, замена матрицы производится в течении одного дня
+            li.element_animation
+              img(src="squircle.svg" loading="lazy" alt="Question Card")
+              img.questions_user(src="storm_trooper.png" loading="lazy" alt="Storm Trooper")
+              h3 Сломал начальнику макбук, теперь там черный экран, помогите...
+                br
+                span При переломе шлейфа, который находится в крышке дисплея Macbook, могут появляться “волны” на подсветке, подсветка становится тусклой и неравномерной. При открытии дисплея или в разных положениях подсветка может пропадать. Нет необходимости менять экран целиком. Можно поменять отдельно шлейф подсветки на вашем Macbook в течении четырех часов
+            li.element_animation
+              img(src="squircle.svg" loading="lazy" alt="Question Card")
+              img.questions_user(src="dimon.png" loading="lazy" alt="Dimon")
+              h3 От друзей остался Macbook, у него не работает камера
+                br
+                span Скорее всего переломился шлейф, который отвечает за работу камеры на Macbook. При этом камера может периодически работать, а потом и вовсе перестать. Мы меняем шлейф камеры макбука и шлейф подсветки парой, чтобы исключить проблемы с подсветкой в дальнейшем
+            li.element_animation
+              img(src="squircle.svg" loading="lazy" alt="Question Card")
+              img.questions_user(src="marilyn.png" loading="lazy" alt="Marilyn")
+              h3 В самолете залили экран Макбука, что можно сделать?
+                br
+                span Если после попадания влаги на экран Macbook появились разводы и потеки на подсветке, значит влага попала в светорассеивающие пленки, отражатель и световод - все это можно поменять без замены дисплея в течении одного дня. В подарок вы получите полную чистку вашего Макбука внутри и снаружи
+      section#compare
+        div.compare_content
+          ul.compare_list
+            li.element_animation.compare_list_title
+              p 
+              p(style="text-transform: lowercase; font-size: 22px;") mymac
+              span остальные
+            li.element_animation.compare_list_subtitle
+              p 
+                | Выбери
+                br
+                span свой 
+                | сервис
+              div.compare_list_start_price
+                p ремонт
                 p 
-                p(style="text-transform: lowercase; font-size: 22px;") mymac
-                span остальные
-              li.compare_list_subtitle
+                  | от 
+                  span 5000
+                p рублей
+              div.compare_list_start_price
+                p ремонт
                 p 
-                  | Выбери
+                  | от 
+                  span(style="color: #EB5757") 40000
+                p рублей
+            li.element_animation.compare_list_odd_item Замена крышки в сборе с дисплеем
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+            li.element_animation Замена только матрицы Macbook
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation.compare_list_odd_item Ремонт матрицы Macbook
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation Замена шлейфов матрицы Flexgate
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation.compare_list_odd_item Замена шлефов подсветки и камеры
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation Ремонт подсветки дисплея
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation.compare_list_odd_item Замена залитой подсветки
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation Ремонт камеры Macbook
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation.compare_list_odd_item Замена резинки дисплея
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation Ремонт проблемы Flexgate
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation.compare_list_odd_item Замена защитной планки
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation Сохраняется подсветка клавиатуры
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation.compare_list_odd_item Сохраняется рабочий True Tone
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li.element_animation Время ремонта
+              div
+                p(style="color: #1BF24B") В течении дня
+              div
+                p(style="color: #EB5757") До 45 дней
+            li.element_animation.compare_list_odd_item Гарантия
+              div
+                p(style="color: #1BF24B") 6 месяцев
+              div
+                p(style="color: #EB5757") -
+          button.bn5.compare_button Заказать          
+      section#contacts
+        div.contacts_content
+          img(src="maps.png" loading="lazy" alt="Maps")
+          div.contacts_block
+            ul.contacts_list
+              li
+                p 
+                  | Адрес
                   br
-                  span свой 
-                  | сервис
-                div.compare_list_start_price
-                  p ремонт
-                  p 
-                    | от 
-                    span 5000
-                  p рублей
-                div.compare_list_start_price
-                  p ремонт
-                  p 
-                    | от 
-                    span(style="color: #EB5757") 40000
-                  p рублей
-              li.compare_list_odd_item Замена крышки в сборе с дисплеем
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-              li Замена только матрицы Macbook
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li.compare_list_odd_item Ремонт матрицы Macbook
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li Замена шлейфов матрицы Flexgate
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li.compare_list_odd_item Замена шлефов подсветки и камеры
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li Ремонт подсветки дисплея
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li.compare_list_odd_item Замена залитой подсветки
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li Ремонт камеры Macbook
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li.compare_list_odd_item Замена резинки дисплея
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li Ремонт проблемы Flexgate
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li.compare_list_odd_item Замена защитной планки
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li Сохраняется подсветка клавиатуры
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li.compare_list_odd_item Сохраняется рабочий True Tone
-                div
-                  img(src="checked.svg" loading="lazy" alt="Checked")
-                div
-                  img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-              li Время ремонта
-                div
-                  p(style="color: #1BF24B") В течении дня
-                div
-                  p(style="color: #EB5757") До 45 дней
-              li.compare_list_odd_item Гарантия
-                div
-                  p(style="color: #1BF24B") 6 месяцев
-                div
-                  p(style="color: #EB5757") -
-            button.bn5.compare_button Заказать          
-        section#contacts
-          div.contacts_content
-            img(src="maps.png" loading="lazy" alt="Maps")
-            div.contacts_block
-              ul.contacts_list
-                li
-                  p 
-                    | Адрес
-                    br
-                    span Ростов-на-Дону
-                    br
-                    span ул.Пушкинская 100
-                li
-                  p
-                    | Часы работы
-                    br
-                    span Пн-Сб 10.00-20.00
-                    br
-                    span Вс Выходной
-                li.contacts_tel
-                  a(href="tel: +79996963434") +7 999 696 34 34
-                li.contacts_social
-                  img(src="telegram.svg" width="20px" height="20px" loading="lazy" alt="Telegram")
-                  img(src="instagram.svg" width="20px" height="20px" loading="lazy" alt="Instagram")
-              div.contacts_form
-                p Задать вопрос
-                form(id="telegram_form")
-                  div(class="user_box")
-                    input(type="text" name="name" placeholder="Ваше имя" maxlength="20" required="")
-                    //- label Ваше имя
-                  div(class="user_box")
-                    input(type="tel" name="phone" placeholder="Телефон" maxlength="20" required="")
-                    //- label Телефон
-                  div(class="user_box")
-                    input(type="text" name="message" placeholder="Сообщение" maxlength="80" required="")
-                    //- label Сообщение
-                  button(class="sendform_button" type="submit" title="Отправляя форму, вы даете согласие на обработку своих данных") Отправить
+                  span Ростов-на-Дону
+                  br
+                  span ул.Пушкинская 100
+              li
+                p
+                  | Часы работы
+                  br
+                  span Пн-Сб 10.00-20.00
+                  br
+                  span Вс Выходной
+              li.contacts_tel
+                a(href="tel: +79996963434") +7 999 696 34 34
+              li.contacts_social
+                img(src="telegram.svg" width="20px" height="20px" loading="lazy" alt="Telegram")
+                img(src="instagram.svg" width="20px" height="20px" loading="lazy" alt="Instagram")
+            div.contacts_form
+              p Задать вопрос
+              form(id="telegram_form")
+                div(class="user_box")
+                  input(type="text" name="name" placeholder="Ваше имя" maxlength="20" required="")
+                  //- label Ваше имя
+                div(class="user_box")
+                  input(type="tel" name="phone" placeholder="Телефон" maxlength="20" required="")
+                  //- label Телефон
+                div(class="user_box")
+                  input(type="text" name="message" placeholder="Сообщение" maxlength="80" required="")
+                  //- label Сообщение
+                button(class="sendform_button" type="submit" title="Отправляя форму, вы даете согласие на обработку своих данных") Отправить
     footer 
       div.footer_content
         p.footer_descript

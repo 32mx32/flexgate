@@ -17,6 +17,15 @@ $header-height: 70px
     font-size: 16px
     color: #A8A9AE
 
+.element_animation
+    opacity: 0
+    // transform: translateY(90%)
+.element_animation.element_show
+    opacity: 1
+    transition: all 2.5s
+    // transform: translateY(0%)
+    // transition: opacity 5s;
+
 html
     height: 100%
     background-color: #000
@@ -79,6 +88,7 @@ body
         section
             background-color: #000
             height: 100vh
+            min-height: 700px
         section#home
             display: grid
             grid-template-columns: 1fr
@@ -116,6 +126,8 @@ body
                         text-transform: uppercase
                         z-index: 1
                         color: #EB5B00
+                    button.active
+                        border: solid 1px #ED5900
                     p.home_content_descr
                         display: none
                     p.home_content_descr.active
@@ -124,7 +136,6 @@ body
                         font-size: 11px
                         font-weight: 300
                         letter-spacing: 0.5px
-
                         animation: text 20s infinite linear
                         padding-left: 100%
                         white-space: nowrap
@@ -205,6 +216,11 @@ body
                                 text-transform: none
                                 font-weight: 400
                                 color: #000
+                    // li.element_animation
+                    //     opacity: 0
+                    // li.element_animation.element_show
+                    //     opacity: 1
+                    //     transition: opacity 3s
         section#compare
             display: grid
             align-items: center

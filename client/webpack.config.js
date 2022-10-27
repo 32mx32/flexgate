@@ -14,9 +14,9 @@ const PATHS = {
 const commonConfig = {
   entry: {
     index: PATHS.source + '/app.js',
-    other: [
-      PATHS.source + "/scripts/scroll.js",
-    ]
+    // other: [
+      // PATHS.source + "/scripts/scroll.js",
+    // ]
   },
   output: {
     path: PATHS.build,
