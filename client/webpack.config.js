@@ -101,10 +101,10 @@ const prodConfig = {
           module: true,
         },
       }),
-      new MiniCssExtractPlugin(),
+      // new MiniCssExtractPlugin(),
     ],
   },
-  plugins: [new MiniCssExtractPlugin()],
+  // plugins: [new MiniCssExtractPlugin()],
 };
 
 const developmentConfig = merge(commonConfig, devConfig);
