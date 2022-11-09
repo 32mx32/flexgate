@@ -83,8 +83,9 @@ const commonConfig = {
 const devConfig = {
   devServer: {
     open: true,
-    port: 3000,
+    port: 3030,
     hot: true,
+    // allowedHosts: 'all'
   },
 };
 
