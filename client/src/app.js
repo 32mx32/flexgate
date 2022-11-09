@@ -3,6 +3,7 @@ import './styles/style.sass';
 import './images/icons/favicon/apple-touch-icon.png';
 import './images/icons/favicon/favicon-32x32.png';
 import './images/icons/favicon/favicon-16x16.png';
+// import './images/icons/favicon/site.webmanifest';
 
 import './images/icons/headerdot.svg';
 import './images/icons/checked.svg';
