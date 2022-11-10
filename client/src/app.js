@@ -116,31 +116,38 @@ document.querySelectorAll('a[href^="#"').forEach((link) => {
   });
 });
 
+
+
 //отслеживание событий для umami
 window.addEventListener('DOMContentLoaded', (event) => {
   console.log('DOM fully loaded and parsed');
 
+  let trackEvents = '';
+
   document.querySelectorAll('.track_events').forEach((item) => {
     item.addEventListener('click', function (e) {
       e.preventDefault();
-      let liEvents = '';
-      let sectionEvents = '';
-      let trackEvents = '';
-      // console.log(item.tagName);
       if (item.tagName == 'LI') {
-        liEvents = item.textContent
-        trackEvents += item.textContent.replace(/\r?\n/g, "")
+        trackEvents += item.textContent.replace(/\r?\n/g, "").replace(/^ +| +$|( ) +/g,"$1")
       }
-      if (item.tagName == 'SECTION') {
-        sectionEvents = item.id
-        trackEvents += item.id
-      }
-      // trackEvents = (sectionEvents + liEvents).replace(/\r?\n/g, "")
-      console.log('trackEvents --->', trackEvents);
-
-      umami(trackEvents);
     });
   });
+
+  setTimeout(document.querySelectorAll('.track_events').forEach((item) => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (item.tagName == 'SECTION') {
+        trackEvents += ' SECTION ' + (item.id).toUpperCase()
+        if (trackEvents.length > 20) {
+          umami(trackEvents);
+          // console.log('setTimeOut --->', trackEvents);
+        }
+        trackEvents = '';
+      }
+    });
+  })
+  , 100);
+
 });
 
 
