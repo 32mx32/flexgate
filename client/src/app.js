@@ -28,6 +28,11 @@ import './images/questions/marilyn.png';
 
 import './images/maps.png';
 
+document.querySelectorAll('li.home_defect_button').forEach((button) => {
+  button.addEventListener('click', function (e) {
+    e.preventDefault();
+  });
+});
 
 //события при выборе дефекта
 document.querySelectorAll('li.home_defect_button').forEach((button) => {
@@ -40,16 +45,13 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
     // document.querySelector('button#home_buy_button').style.cssText = "border: solid 0.1px #EB5B00; transition: border 0.1s linear;";
 
     function hideBorder() {
-        document.querySelector('button#home_buy_button').style.cssText = "background: none; transition: background 5s linear;";
+      document.querySelector('button#home_buy_button').style.cssText =
+        'background: none; transition: background 5s linear;';
     }
-    document.querySelector('button#home_buy_button').style.cssText = "background: #EB5B00; transition: background 0.1s linear;";
+    document.querySelector('button#home_buy_button').style.cssText =
+      'background: #EB5B00; transition: background 0.1s linear;';
 
-
-
-
-    setTimeout(hideBorder, 300)
-
-
+    setTimeout(hideBorder, 300);
 
     document.querySelector('button#home_buy_button').classList.add('active');
     document.querySelector('button#home_buy_button').classList.remove('active');
@@ -113,3 +115,71 @@ document.querySelectorAll('a[href^="#"').forEach((link) => {
     });
   });
 });
+
+//отслеживание событий для umami
+window.addEventListener('DOMContentLoaded', (event) => {
+  console.log('DOM fully loaded and parsed');
+
+  document.querySelectorAll('.track_events').forEach((item) => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      let liEvents = '';
+      let sectionEvents = '';
+      let trackEvents = '';
+      // console.log(item.tagName);
+      if (item.tagName == 'LI') {
+        liEvents = item.textContent
+        trackEvents += item.textContent.replace(/\r?\n/g, "")
+      }
+      if (item.tagName == 'SECTION') {
+        sectionEvents = item.id
+        trackEvents += item.id
+      }
+      // trackEvents = (sectionEvents + liEvents).replace(/\r?\n/g, "")
+      console.log('trackEvents --->', trackEvents);
+
+      umami(trackEvents);
+    });
+  });
+});
+
+
+
+
+
+
+// // ждем полной загрузки страницы
+// window.onload = () => {
+//   // устанавливаем настройки
+//   const options = {
+//       // родитель целевого элемента - область просмотра
+//       root: null,
+//       // без отступов
+//       rootMargin: '0px',
+//       // процент пересечения - половина изображения
+//       threshold: 0.5
+//   }
+
+//   // создаем наблюдатель
+//   const observer = new IntersectionObserver((entries, observer) => {
+//       // для каждой записи-целевого элемента
+//       entries.forEach(entry => {
+//           // если элемент является наблюдаемым
+//           if (entry.isIntersecting) {
+//               const lazyImg = entry.target
+//               // выводим информацию в консоль - проверка работоспособности наблюдателя
+//               console.log('lazyImg --->', lazyImg)
+//               // меняем фон контейнера
+//               lazyImg.style.background = 'deepskyblue'
+//               // прекращаем наблюдение
+//               observer.unobserve(lazyImg)
+//           }
+//       })
+//   }, options)
+
+//   // с помощью цикла следим за всеми img на странице
+//   const arr = document.querySelectorAll('section')
+//   arr.forEach(i => {
+//       observer.observe(i)
+//   })
+// }

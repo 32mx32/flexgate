@@ -1,5 +1,5 @@
 - const TITLE = "FlexGate - Замена и ремонт матрицы дисплея (экрана) Macbook и iMac в Ростове-на-Дону - Сервисный центр Apple";
-- const DESCRIPTION = "😊 Замена матрицы дисплея Macbook. Замена шлефов матрицы (Flrxgate), замена и ремонт подсветки. Ремонт дисплея Macbook. Замена стекла iMac";
+- const DESCRIPTION = "😊 Замена матрицы дисплея Macbook. Замена шлефов матрицы (Flexgate), замена и ремонт подсветки. Ремонт дисплея Macbook. Замена стекла iMac";
 - const OG_IMAGE = "https://flaxgate.ru/hand-phone.jpg"
 - const OG_SITENAME = "Ремонт дисплея и замена матрицы Macbook и iMac"
 
@@ -48,7 +48,7 @@ html(lang='ru')
   body(translate="no")
     header 
       div.header_left
-        a(href="#home")
+        a(class="track_events" href="#home")
           p.header_logo flexGate
             br
             span by 
@@ -56,17 +56,17 @@ html(lang='ru')
       nav.header_center
         ul
           li
-            a(href="#home").active Главная
+            a(class="track_events" href="#home").active Главная
           li
-            a(href="#questions") Вопросы
+            a(class="track_events" href="#questions") Вопросы
           li
-            a(href="#compare") Сравнение
+            a(class="track_events" href="#compare") Сравнение
           li
-            a(href="#contacts") Контакты
+            a(class="track_events" href="#contacts") Контакты
       div.header_rigth
         img(src="headerdot.svg" loading="lazy" alt="Mobile Menu")
     main
-      section#home
+      section(class="track_events" id="home")
         div.home_content
           img.home_content_title(src="macbook.png" loading="lazy" alt="Macbook Pro")
           img(class="home_content_defect active" src="kenny.png" id="kenny" loading="lazy" alt="Kenny")
@@ -83,12 +83,12 @@ html(lang='ru')
             p(class="home_content_descr" descr="kenny5") рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают
         div.home_selector
           ul
-            li(class="home_defect_button active" defect="kenny") Полосы на экране
-            li(class="home_defect_button" defect="kenny2") Залита подсветка
-            li(class="home_defect_button" defect="kenny3") Разбита матрица
-            li(class="home_defect_button" defect="kenny4") Проблема камеры
-            li(class="home_defect_button" defect="kenny5") Нет изображения
-      section#questions
+            li(class="track_events home_defect_button active" defect="kenny") Полосы на экране
+            li(class="track_events home_defect_button" defect="kenny2") Залита подсветка
+            li(class="track_events home_defect_button" defect="kenny3") Разбита матрица
+            li(class="track_events home_defect_button" defect="kenny4") Проблема камеры
+            li(class="track_events home_defect_button" defect="kenny5") Нет изображения
+      section(class="track_events" id="questions")
         div.questions_content
           ul
             li.element_animation
@@ -129,14 +129,14 @@ html(lang='ru')
               h3 В самолете залили экран Макбука, что можно сделать?
                 br
                 span Если после попадания влаги на экран Macbook появились разводы и потеки на подсветке, значит влага попала в светорассеивающие пленки, отражатель и световод - все это можно поменять без замены дисплея в течении одного дня. В подарок вы получите полную чистку вашего Макбука внутри и снаружи
-      section#compare
+      section(class="track_events" id="compare")
         div.compare_content
           ul.compare_list
-            li.element_animation.compare_list_title
+            li(class="element_animation compare_list title")
               p 
               p(style="text-transform: lowercase; font-size: 22px;") mymac
               span остальные
-            li.element_animation.compare_list_subtitle
+            li(class="element_animation compare_list subtitle")
               p 
                 | Выбери
                 br
@@ -154,83 +154,83 @@ html(lang='ru')
                   | от 
                   span(style="color: #EB5757") 40000
                 p рублей
-            li.element_animation.compare_list_odd_item Замена крышки в сборе с дисплеем
+            li(class="track_events element_animation compare_list odd_item active") Замена крышки в сборе с дисплеем
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
-            li.element_animation Замена только матрицы Macbook
-              div
-                img(src="checked.svg" loading="lazy" alt="Checked")
-              div
-                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation.compare_list_odd_item Ремонт матрицы Macbook
+            li(class="track_events element_animation compare_list") Замена только матрицы Macbook
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation Замена шлейфов матрицы Flexgate
+            li(class="track_events element_animation compare_list odd_item") Ремонт матрицы Macbook
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation.compare_list_odd_item Замена шлефов подсветки и камеры
+            li(class="track_events element_animation compare_list") Замена шлейфов матрицы Flexgate
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation Ремонт подсветки дисплея
+            li(class="track_events element_animation compare_list odd_item") Замена шлефов подсветки и камеры
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation.compare_list_odd_item Замена залитой подсветки
+            li(class="track_events element_animation compare_list") Ремонт подсветки дисплея
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation Ремонт камеры Macbook
+            li(class="track_events element_animation compare_list odd_item") Замена залитой подсветки
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation.compare_list_odd_item Замена резинки дисплея
+            li(class="track_events element_animation compare_list") Ремонт камеры Macbook
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation Ремонт проблемы Flexgate
+            li(class="track_events element_animation compare_list odd_item") Замена резинки дисплея
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation.compare_list_odd_item Замена защитной планки
+            li(class="track_events element_animation compare_list") Ремонт проблемы Flexgate
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation Сохраняется подсветка клавиатуры
+            li(class="track_events element_animation compare_list odd_item") Замена защитной планки
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation.compare_list_odd_item Сохраняется рабочий True Tone
+            li(class="track_events element_animation compare_list") Сохраняется подсветка клавиатуры
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li.element_animation Время ремонта
+            li(class="track_events element_animation compare_list odd_item") Сохраняется рабочий True Tone
+              div
+                img(src="checked.svg" loading="lazy" alt="Checked")
+              div
+                img(src="unchecked.svg" loading="lazy" alt="Unchecked")
+            li(class="track_events element_animation compare_list") Время ремонта
               div
                 p(style="color: #1BF24B") В течении дня
               div
                 p(style="color: #EB5757") До 45 дней
-            li.element_animation.compare_list_odd_item Гарантия
+            li(class="track_events element_animation compare_list odd_item") Гарантия
               div
                 p(style="color: #1BF24B") 6 месяцев
               div
                 p(style="color: #EB5757") -
           button.bn5.compare_button Заказать          
-      section#contacts
+      section(class="track_events" id="contacts")
         div.contacts_content
           img(src="maps.png" loading="lazy" alt="Maps")
           div.contacts_block
@@ -250,7 +250,7 @@ html(lang='ru')
                   br
                   span Вс Выходной
               li.contacts_tel
-                a(href="tel: +79996963434") +7 999 696 34 34
+                a(class="track_events" href="tel: +79996963434") +7 999 696 34 34
               li.contacts_social
                 img(src="telegram.svg" width="20px" height="20px" loading="lazy" alt="Telegram")
                 img(src="instagram.svg" width="20px" height="20px" loading="lazy" alt="Instagram")

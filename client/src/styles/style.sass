@@ -22,7 +22,7 @@ $header-height: 70px
     // transform: translateY(90%)
 .element_animation.element_show
     opacity: 1
-    transition: all 2.5s
+    transition: all 0.9s
     // transform: translateY(0%)
     // transition: opacity 5s;
 
@@ -243,8 +243,10 @@ body
                         text-transform: uppercase
                         padding-left: 30px
                         padding-right: 50px
-                        // &:hover
-                        //     background: #fff
+                        cursor: pointer
+                        &:hover
+                            color: #EE5A00
+                            font-size: 15px                            
                         div
                             display: grid
                             align-items: center
@@ -256,11 +258,14 @@ body
                             p
                                 text-align: center
                                 font-size: 14px
-                    li.compare_list_title
+                    li.active
+                        color: #EE5A00 !important
+                        font-size: 15px  
+                    li.compare_list.title
                         height: 55px
                         background: linear-gradient(180deg, #3F3F3E 0%, #2C2C2C 100%)
                         text-align: center
-                    li.compare_list_subtitle
+                    li.compare_list.subtitle
                         height: 88px
                         background: linear-gradient(180deg, #333333 0%, #202020 100%)
                         p
@@ -287,7 +292,7 @@ body
                             p:nth-child(3)
                                 font-size: 11px
                                 text-align: end
-                    li.compare_list_odd_item
+                    li.compare_list.odd_item
                         background: #333333
                 button.compare_button
                     margin-top: 35px
