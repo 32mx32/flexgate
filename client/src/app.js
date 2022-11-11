@@ -28,21 +28,14 @@ import './images/questions/marilyn.png';
 
 import './images/maps.png';
 
+
+
+
+
+//события при выборе дефекта в #HOME
 document.querySelectorAll('li.home_defect_button').forEach((button) => {
   button.addEventListener('click', function (e) {
     e.preventDefault();
-  });
-});
-
-//события при выборе дефекта
-document.querySelectorAll('li.home_defect_button').forEach((button) => {
-  button.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    // function hideBorder() {
-    //     document.querySelector('button#home_buy_button').style.cssText = "border: solid 0px #EB5B00; transition: border 0.1s linear;";
-    // }
-    // document.querySelector('button#home_buy_button').style.cssText = "border: solid 0.1px #EB5B00; transition: border 0.1s linear;";
 
     function hideBorder() {
       document.querySelector('button#home_buy_button').style.cssText =
@@ -50,18 +43,18 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
     }
     document.querySelector('button#home_buy_button').style.cssText =
       'background: #EB5B00; transition: background 0.1s linear;';
-
     setTimeout(hideBorder, 300);
+
 
     document.querySelector('button#home_buy_button').classList.add('active');
     document.querySelector('button#home_buy_button').classList.remove('active');
-    // document.querySelector('button#home_buy_button.bn5',':before').classList.add('hover')
-    // console.log(document.querySelector('button#home_buy_button.bn5',':before').classList )
+
 
     document.querySelectorAll('li.home_defect_button').forEach((defect_button) => {
       defect_button.classList.remove('active');
     });
     button.classList.add('active');
+
 
     document.querySelectorAll('img.home_content_defect').forEach((image) => {
       image.classList.remove('active');
@@ -69,12 +62,35 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
     let defect = this.getAttribute('defect');
     document.getElementById(defect).classList.add('active');
 
+
     document.querySelectorAll('p.home_content_descr').forEach((description) => {
       description.classList.remove('active');
     });
     document.querySelector(`[descr='${defect}']`).classList.add('active');
   });
 });
+
+
+
+
+
+
+
+//события при выборе дефекта в #COMPARE
+document.querySelectorAll('li.compare_list').forEach((item) => {
+  item.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelectorAll('li.compare_list').forEach((select_defect) => {
+      select_defect.classList.remove('active');
+    });
+    item.classList.add('active');
+  });
+});
+
+
+
+
 
 //анимация плавного появления элементов
 function onEntry(entry) {
@@ -94,6 +110,9 @@ let elements = document.querySelectorAll('.element_animation');
 for (let elm of elements) {
   observer.observe(elm);
 }
+
+
+
 
 //плавная прокрутка страницы
 document.querySelectorAll('a[href^="#"').forEach((link) => {
@@ -124,29 +143,32 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   let trackEvents = '';
 
-  document.querySelectorAll('.track_events').forEach((item) => {
+  setTimeout(document.querySelectorAll('.track_events').forEach((item) => {
     item.addEventListener('click', function (e) {
       e.preventDefault();
       if (item.tagName == 'LI') {
         trackEvents += item.textContent.replace(/\r?\n/g, "").replace(/^ +| +$|( ) +/g,"$1")
       }
-    });
-  });
-
-  setTimeout(document.querySelectorAll('.track_events').forEach((item) => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
+      if (item.tagName == 'BUTTON') {
+        trackEvents += item.textContent.replace(/\r?\n/g, "").replace(/^ +| +$|( ) +/g,"$1")
+      }
+      if (item.tagName == 'A') {
+        trackEvents = item.textContent.replace(/\r?\n/g, "").replace(/^ +| +$|( ) +/g,"$1")
+        console.log(trackEvents);
+        umami(trackEvents);
+        trackEvents = '';
+      }
       if (item.tagName == 'SECTION') {
-        trackEvents += ' SECTION ' + (item.id).toUpperCase()
-        if (trackEvents.length > 20) {
+        trackEvents += ' #' + (item.id).toUpperCase()
+        if (trackEvents[1] != '#') {
           umami(trackEvents);
-          // console.log('setTimeOut --->', trackEvents);
+          console.log('setTimeOut --->', trackEvents);
         }
         trackEvents = '';
       }
     });
   })
-  , 100);
+  , 50);
 
 });
 

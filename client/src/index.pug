@@ -24,15 +24,12 @@ html(lang='ru')
     meta(name="og:image" content= OG_IMAGE)
     meta(name="og:image:width" content="1120")
     meta(name="og:image:height" content="584")
-
     link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
     link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
     link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
     meta(name="msapplication-TileColor" content="#000")
     meta(name="theme-color" content="#000")
-
     script(async defer data-website-id="bcecfb21-4e46-4946-a196-dc0f5d6f7be1" src="https://umami.internal-test.ru/umami.js")
-
   body(translate="no")
     header 
       div.header_left
@@ -55,21 +52,21 @@ html(lang='ru')
         img(src="headerdot.svg" loading="lazy" alt="Mobile Menu")
     main
       section(class="track_events" id="home")
-        div.home_content
+        div(class="home_content")
           img.home_content_title(src="macbook.png" loading="lazy" alt="Macbook Pro")
           img(class="home_content_defect active" src="kenny.png" id="kenny" loading="lazy" alt="Kenny")
           img(class="home_content_defect" src="kenny2.png" id="kenny2" loading="lazy" alt="Kenny")
           img(class="home_content_defect" src="kenny3.png" id="kenny3" loading="lazy" alt="Kenny")
           img(class="home_content_defect" src="kenny4.png" id="kenny4" loading="lazy" alt="Kenny")
           img(class="home_content_defect" src="kenny5.png" id="kenny5" loading="lazy" alt="Kenny")
-          div.home_content_info
-            button#home_buy_button.bn5 Заказать
+          div(class="home_content_info")
+            button(class="track_events bn5" id="home_buy_button") Заказать
             p(class="home_content_descr active" descr="kenny") На дисплее Macbook появились полосы, иногда, если закрывать крышку, полосы пропадают...
             p(class="home_content_descr" descr="kenny2") Macbook появилис Macbook появилис Macbook появилис Macbook появилис Macbook появилис
             p(class="home_content_descr" descr="kenny3") полосы, иногда полосы, иногда полосы, иногда полосы, иногда полосы, иногда полосы, иногда
             p(class="home_content_descr" descr="kenny4") если закрывать если закрывать если закрывать если закрывать если закрывать если закрывать
             p(class="home_content_descr" descr="kenny5") рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают рышку, полосы пропадают
-        div.home_selector
+        div(class="home_selector")
           ul
             li(class="track_events home_defect_button active" defect="kenny") Полосы на экране
             li(class="track_events home_defect_button" defect="kenny2") Залита подсветка
@@ -118,8 +115,8 @@ html(lang='ru')
                 br
                 span Если после попадания влаги на экран Macbook появились разводы и потеки на подсветке, значит влага попала в светорассеивающие пленки, отражатель и световод - все это можно поменять без замены дисплея в течении одного дня. В подарок вы получите полную чистку вашего Макбука внутри и снаружи
       section(class="track_events" id="compare")
-        div.compare_content
-          ul.compare_list
+        div(class="compare_content")
+          ul(class="compare_list")
             li(class="element_animation compare_list title")
               p 
               p(style="text-transform: lowercase; font-size: 22px;") mymac
@@ -142,7 +139,7 @@ html(lang='ru')
                   | от 
                   span(style="color: #EB5757") 40000
                 p рублей
-            li(class="track_events element_animation compare_list odd_item active") Замена крышки в сборе с дисплеем
+            li(class="track_events element_animation compare_list odd_item") Замена крышки в сборе с дисплеем
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
@@ -217,7 +214,7 @@ html(lang='ru')
                 p(style="color: #1BF24B") 6 месяцев
               div
                 p(style="color: #EB5757") -
-          button.bn5.compare_button Заказать          
+          button(class="track_events bn5 compare_button") Заказать          
       section(class="track_events" id="contacts")
         div.contacts_content
           img(src="maps.png" loading="lazy" alt="Maps")
