@@ -15,7 +15,9 @@ const commonConfig = {
   entry: {
     index: PATHS.source + '/app.js',
     // other: [
-      // PATHS.source + "/scripts/scroll.js",
+    //   PATHS.source + "/scripts/modal.js",
+    //   PATHS.source + "/scripts/form.js",
+    //   PATHS.source + "/scripts/axios.js",
     // ]
   },
   output: {

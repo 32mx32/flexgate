@@ -3,7 +3,6 @@ import './styles/style.sass';
 import './images/icons/favicon/apple-touch-icon.png';
 import './images/icons/favicon/favicon-32x32.png';
 import './images/icons/favicon/favicon-16x16.png';
-// import './images/icons/favicon/site.webmanifest';
 
 import './images/icons/headerdot.svg';
 import './images/icons/checked.svg';
@@ -12,11 +11,16 @@ import './images/icons/telegram.svg';
 import './images/icons/instagram.svg';
 
 import './images/home/macbook.png';
-import './images/home/kenny.png';
-import './images/home/kenny2.png';
-import './images/home/kenny3.png';
-import './images/home/kenny4.png';
-import './images/home/kenny5.png';
+import './images/home/kenny_stripes.png';
+import './images/home/kenny_stripes.webp';
+import './images/home/kenny_flood.png';
+import './images/home/kenny_flood.webp';
+import './images/home/kenny_broken.png';
+import './images/home/kenny_broken.webp';
+import './images/home/kenny_nocam.png';
+import './images/home/kenny_nocam.webp';
+import './images/home/kenny_nopict.png';
+import './images/home/kenny_nopict.webp';
 
 import './images/questions/squircle.svg';
 import './images/questions/bart_simpson.png';
@@ -27,6 +31,9 @@ import './images/questions/dimon.png';
 import './images/questions/marilyn.png';
 
 import './images/maps.png';
+
+import './scripts/form.js';
+import './scripts/modal.js';
 
 
 
@@ -139,7 +146,7 @@ document.querySelectorAll('a[href^="#"').forEach((link) => {
 
 //отслеживание событий для umami
 window.addEventListener('DOMContentLoaded', (event) => {
-  console.log('DOM fully loaded and parsed');
+  // console.log('DOM fully loaded and parsed');
 
   let trackEvents = '';
 
@@ -154,7 +161,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
       if (item.tagName == 'A') {
         trackEvents = item.textContent.replace(/\r?\n/g, "").replace(/^ +| +$|( ) +/g,"$1")
-        console.log(trackEvents);
+        // console.log(trackEvents);
         umami(trackEvents);
         trackEvents = '';
       }
@@ -162,7 +169,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         trackEvents += ' #' + (item.id).toUpperCase()
         if (trackEvents[1] != '#') {
           umami(trackEvents);
-          console.log('setTimeOut --->', trackEvents);
+          // console.log('setTimeOut --->', trackEvents);
         }
         trackEvents = '';
       }
