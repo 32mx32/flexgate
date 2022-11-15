@@ -32,6 +32,8 @@ import './images/questions/marilyn.png';
 
 import './images/maps.png';
 
+// import './dict/defect_dict.pug';
+
 import './scripts/form.js';
 import './scripts/modal.js';
 
