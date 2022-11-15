@@ -4,6 +4,35 @@
 
 $header-height: 70px
 
+
+@mixin no-scroll-bar()
+    &::-webkit-scrollbar
+        height: 0
+        width: 0
+
+    &::-webkit-scrollbar-thumb
+        height: 0
+        width: 0
+
+    &::-webkit-scrollbar-track
+        height: 0
+        width: 0
+
+@mixin custom-scroll-bar()
+    &::-webkit-scrollbar
+        border-radius: 10px
+        height: 10px
+        width: 8px
+
+    &::-webkit-scrollbar-thumb
+        background: #999
+        border-radius: 10px
+
+    &::-webkit-scrollbar-track
+        border-radius: 10px
+
+        
+
 *
     margin: 0
     padding: 0
@@ -39,6 +68,9 @@ body
     min-height: 100%
     margin: 0 auto
     grid-template-areas: "header header" "main main" "footer footer"
+
+    @media screen and (max-width: 600px)
+        width: 100%
     header
         z-index: 1
         grid-area: header
@@ -82,6 +114,19 @@ body
             img
                 width: 20px
                 height: 20px
+
+        @media screen and (max-width: 600px)
+            grid-template-columns: 35% 65%
+            grid-template-rows: 1fr
+            div.header_left
+                margin-top: 12%
+                p.header_logo
+                    font-size: 30px
+                    line-height: 10px
+            nav.header_center
+                display: none
+            div.header_rigth
+                margin-right: -65%
     main
         grid-area: main
         width: 100%
@@ -108,7 +153,7 @@ body
                     display: none
                     position: absolute
                     top: 30px
-                    left: 26px;
+                    left: 26px
                     width: 912px
                 img.home_content_defect.active
                     display: block
@@ -179,6 +224,49 @@ body
                     li.active
                         border: solid 1px #ED5900
                         background: #000
+
+        @media screen and (max-width: 600px)
+            section#home
+                grid-template-rows: 2fr 1fr
+                div.home_content
+                    // margin-top: -20%;
+                    align-self: center
+                    img.home_content_title
+                        width: 95%
+                        height: auto
+                    img.home_content_defect
+                        width: 90%
+                        left: 5%
+                        top: 5%
+                    div.home_content_info
+                        display: none
+                div.home_selector
+                    display: grid
+                    overflow-x: scroll
+                    margin-top: -20%
+                    @include no-scroll-bar
+                    ul
+                        margin-left: 250%
+                        padding-right: 20%;
+                        scroll-snap-type: x proximity
+                        overflow-x: scroll
+                        scroll-padding: 50%
+                        @include no-scroll-bar
+                        li
+                            // position: relative
+                            // scroll-snap-align: center
+                            width: 230px
+                            height: 170px
+                            background: rgba(25, 26, 30, 0.5)
+                            border: 1px solid rgba(85, 74, 74, 0.3)
+                            border-radius: 24px
+                            scroll-margin: 10px
+                            scroll-snap-align: center
+                            scroll-snap-stop: always
+                            justify-content: center
+                            align-items: center
+                            scroll-behavior: smooth
+
         section#questions
             display: grid
             grid-template-columns: 1fr
@@ -224,6 +312,8 @@ body
                     // li.element_animation.element_show
                     //     opacity: 1
                     //     transition: opacity 3s
+            @media screen and (max-width: 600px)
+                display: none
         section#compare
             display: grid
             align-items: center
@@ -249,7 +339,7 @@ body
                         cursor: pointer
                         &:hover
                             color: #EE5A00
-                            font-size: 15px                            
+                            font-size: 15px
                         div
                             display: grid
                             align-items: center
@@ -263,7 +353,7 @@ body
                                 font-size: 14px
                     li.active
                         color: #EE5A00 !important
-                        font-size: 15px  
+                        font-size: 15px
                     li.compare_list.title
                         height: 55px
                         background: linear-gradient(180deg, #3F3F3E 0%, #2C2C2C 100%)
@@ -308,6 +398,8 @@ body
                     cursor: pointer
                 button.bn5:before
                     opacity: 1 // чтобы кнопочка светилась
+            @media screen and (max-width: 600px)
+                display: none
         section#contacts
             display: grid
             align-items: center
@@ -386,9 +478,13 @@ body
                                 // cursor: pointer
                                 &:hover
                                     background-color: rgba(33, 33, 33, 0.99)
+            @media screen and (max-width: 600px)
+                display: none
     footer
         grid-area: footer
         width: 1030px
+        @media screen and (max-width: 600px)
+            display: none
         div.footer_content
             display: grid
             grid-template-rows: 1fr 1fr
