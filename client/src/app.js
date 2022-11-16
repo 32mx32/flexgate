@@ -37,9 +37,33 @@ import './images/maps.png';
 import './scripts/form.js';
 import './scripts/modal.js';
 
+// import './scripts/simple-adaptive-slider.js';
+// import './styles/simple-adaptive-slider.css';
 
+// window.addEventListener('DOMContentLoaded', () => {
+//   // инициализация слайдера
+//   new ItcSimpleSlider('.itcss', {
+//     loop: true,
+//     autoplay: false,
+//     interval: 5000,
+//     swipe: true,
+//   });
+// });
 
+// window.addEventListener('DOMContentLoaded', (event) => {
+//   // console.log('DOM fully loaded and parsed');
 
+//   document.addEventListener('DOMContentLoaded', () => {
+//     // инициализация слайдера
+//     console.log('инициализация слайдера');
+//     new ItcSimpleSlider('.itcss', {
+//       loop: true,
+//       autoplay: false,
+//       interval: 5000,
+//       swipe: true,
+//     });
+//   });
+// });
 
 //события при выборе дефекта в #HOME
 document.querySelectorAll('li.home_defect_button').forEach((button) => {
@@ -54,16 +78,13 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
       'background: #EB5B00; transition: background 0.1s linear;';
     setTimeout(hideBorder, 300);
 
-
     document.querySelector('button#home_buy_button').classList.add('active');
     document.querySelector('button#home_buy_button').classList.remove('active');
-
 
     document.querySelectorAll('li.home_defect_button').forEach((defect_button) => {
       defect_button.classList.remove('active');
     });
     button.classList.add('active');
-
 
     document.querySelectorAll('img.home_content_defect').forEach((image) => {
       image.classList.remove('active');
@@ -71,19 +92,12 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
     let defect = this.getAttribute('defect');
     document.getElementById(defect).classList.add('active');
 
-
     document.querySelectorAll('p.home_content_descr').forEach((description) => {
       description.classList.remove('active');
     });
     document.querySelector(`[descr='${defect}']`).classList.add('active');
   });
 });
-
-
-
-
-
-
 
 //события при выборе дефекта в #COMPARE
 document.querySelectorAll('li.compare_list').forEach((item) => {
@@ -96,10 +110,6 @@ document.querySelectorAll('li.compare_list').forEach((item) => {
     item.classList.add('active');
   });
 });
-
-
-
-
 
 //анимация плавного появления элементов
 function onEntry(entry) {
@@ -119,9 +129,6 @@ let elements = document.querySelectorAll('.element_animation');
 for (let elm of elements) {
   observer.observe(elm);
 }
-
-
-
 
 //плавная прокрутка страницы
 document.querySelectorAll('a[href^="#"').forEach((link) => {
@@ -144,47 +151,41 @@ document.querySelectorAll('a[href^="#"').forEach((link) => {
   });
 });
 
-
-
 //отслеживание событий для umami
 window.addEventListener('DOMContentLoaded', (event) => {
   // console.log('DOM fully loaded and parsed');
 
   let trackEvents = '';
 
-  setTimeout(document.querySelectorAll('.track_events').forEach((item) => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (item.tagName == 'LI') {
-        trackEvents += item.textContent.replace(/\r?\n/g, "").replace(/^ +| +$|( ) +/g,"$1")
-      }
-      if (item.tagName == 'BUTTON') {
-        trackEvents += item.textContent.replace(/\r?\n/g, "").replace(/^ +| +$|( ) +/g,"$1")
-      }
-      if (item.tagName == 'A') {
-        trackEvents = item.textContent.replace(/\r?\n/g, "").replace(/^ +| +$|( ) +/g,"$1")
-        // console.log(trackEvents);
-        umami(trackEvents);
-        trackEvents = '';
-      }
-      if (item.tagName == 'SECTION') {
-        trackEvents += ' #' + (item.id).toUpperCase()
-        if (trackEvents[1] != '#') {
-          umami(trackEvents);
-          // console.log('setTimeOut --->', trackEvents);
+  setTimeout(
+    document.querySelectorAll('.track_events').forEach((item) => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (item.tagName == 'LI') {
+          trackEvents += item.textContent.replace(/\r?\n/g, '').replace(/^ +| +$|( ) +/g, '$1');
         }
-        trackEvents = '';
-      }
-    });
-  })
-  , 50);
-
+        if (item.tagName == 'BUTTON') {
+          trackEvents += item.textContent.replace(/\r?\n/g, '').replace(/^ +| +$|( ) +/g, '$1');
+        }
+        if (item.tagName == 'A') {
+          trackEvents = item.textContent.replace(/\r?\n/g, '').replace(/^ +| +$|( ) +/g, '$1');
+          // console.log(trackEvents);
+          umami(trackEvents);
+          trackEvents = '';
+        }
+        if (item.tagName == 'SECTION') {
+          trackEvents += ' #' + item.id.toUpperCase();
+          if (trackEvents[1] != '#') {
+            umami(trackEvents);
+            // console.log('setTimeOut --->', trackEvents);
+          }
+          trackEvents = '';
+        }
+      });
+    }),
+    50
+  );
 });
-
-
-
-
-
 
 // // ждем полной загрузки страницы
 // window.onload = () => {
