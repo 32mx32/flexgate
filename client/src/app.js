@@ -96,6 +96,12 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
       description.classList.remove('active');
     });
     document.querySelector(`[descr='${defect}']`).classList.add('active');
+
+    
+    document.querySelector("#home_order_button").classList.remove('active');
+    // document.querySelector("#home_order_button").classList.add('active');
+    setTimeout(() => {document.querySelector("#home_order_button").classList.add('active')}, 200)
+
   });
 });
 

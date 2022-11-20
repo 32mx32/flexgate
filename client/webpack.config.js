@@ -5,6 +5,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { merge } = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
@@ -89,6 +90,22 @@ const devConfig = {
     hot: true,
     // allowedHosts: 'all'
   },
+  plugins: [
+    new BrowserSyncPlugin(
+      // BrowserSync options
+      {
+        host: 'localhost',
+        port: 3003,
+        proxy: 'http://localhost:3030/'
+      },
+      // plugin options
+      {
+        // prevent BrowserSync from reloading the page
+        // and let Webpack Dev Server take care of this
+        reload: true
+      }
+    ),
+  ],
 };
 
 const prodConfig = {

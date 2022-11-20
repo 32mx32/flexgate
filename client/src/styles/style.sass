@@ -209,24 +209,21 @@ body
                         justify-items: center
                         width: 155px
                         height: 32px
-                        border: solid 1px #000
                         border-radius: 8px
-                        background: #1D1E22
+                        background: #131318
                         font-size: 12px
                         text-transform: uppercase
                         margin: 0px 7px
                         cursor: pointer
                         transition: 0.15s linear
                         &:hover
-                            border: solid 1px #ED5900
-                            background: #000
+                        //    filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
                     li.active
-                        border: solid 1px #ED5900
-                        background: #000
+                        filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
 
         @media screen and (max-width: 600px)
             section#home
-                padding-top: 30%
+                padding-top: 20%
                 grid-template-rows: 35% 65%
                 div.home_content
                     // margin-top: -20%;
@@ -241,24 +238,39 @@ body
                     div.home_content_info
                         display: none
                 div.home_selector
-                    margin-top: 25px
+                    margin-top: 5%
                     width: 100%
                     ul
                         display: grid
-                        grid-template-columns: 21% 21% 21% 32%
-                        grid-template-rows: 30% 30% 35%
-                        gap: 8px 8px
+                        grid-template-columns: 23% 23% 11% 31%
+                        grid-template-rows: 25% 25% 30%
+                        // gap: 8px 8px
+                        gap: 3% 3%;
                         grid-template-areas: "a a a c" "b b b c" "d d e e"
                         align-items: center
-                        width: 80%
+                        justify-items: unset;
+                        width: 100%
                         height: 300px
-                        text-align: center
+                        padding: 0 8%;
                         li
                             width: 100%
                             height: 100%
-                            background: rgba(51, 51, 51, 0.4);
-                            border: 0.5px solid #A8A9AE;
-                            border-radius: 20px;
+                            border-radius: 11px;
+                            text-align: left
+                            padding: 0px 5%;
+                            padding-left: 10%
+                            // padding-right: 10px;
+                            h3
+                                font-size: 13px
+                                font-weight: 500
+                                line-height: 14px
+                                span
+                                    display: block
+                                    margin-top: 6px
+                                    font-size: 12px
+                                    font-weight: 400
+                                    line-height: 95%
+                                    text-transform: initial
                         li#defect_button_a
                             grid-area: a
                         li#defect_button_b
@@ -269,7 +281,21 @@ body
                             grid-area: d
                         li#defect_button_e
                             grid-area: e
-
+                button#home_order_button
+                    width: 60%
+                    height: 48px
+                    margin-top: -5px
+                    background: #131318
+                    // border: 1px solid #A8A9AE
+                    border-radius: 11px
+                    font-size: 13px;
+                    font-weight: 500;
+                    text-transform: uppercase
+                    cursor: pointer
+                    // transition: 3s;
+                button.bn5.active:before
+                    opacity: 1 // чтобы кнопочка светилась
+                    transition: opacity 3s;
 
         section#questions
             display: grid
