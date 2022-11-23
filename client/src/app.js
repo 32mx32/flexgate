@@ -32,38 +32,35 @@ import './images/questions/marilyn.png';
 
 import './images/maps.png';
 
-// import './dict/defect_dict.pug';
-
 import './scripts/form.js';
 import './scripts/modal.js';
 
-// import './scripts/simple-adaptive-slider.js';
-// import './styles/simple-adaptive-slider.css';
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   // инициализация слайдера
-//   new ItcSimpleSlider('.itcss', {
-//     loop: true,
-//     autoplay: false,
-//     interval: 5000,
-//     swipe: true,
-//   });
-// });
+import { tns } from '/node_modules/tiny-slider/src/tiny-slider'
 
-// window.addEventListener('DOMContentLoaded', (event) => {
-//   // console.log('DOM fully loaded and parsed');
 
-//   document.addEventListener('DOMContentLoaded', () => {
-//     // инициализация слайдера
-//     console.log('инициализация слайдера');
-//     new ItcSimpleSlider('.itcss', {
-//       loop: true,
-//       autoplay: false,
-//       interval: 5000,
-//       swipe: true,
-//     });
-//   });
-// });
+// инициализация слайдера
+window.addEventListener('DOMContentLoaded', () => {
+  var slider = tns({
+    container: '.questions_slider',
+    items: 1,
+    slideBy: 'page',
+    // autoplay: true,
+    // gutter: 10, //Расстояние между слайдами
+    // edgePadding: 10, //Отступ снаружи
+    controlsPosition: 'bottom',
+    controlsText: ['<', '>'],
+    navAsThumbnails: true,
+    mouseDrag: true,
+    swipeAngle: false,
+    arrowKeys: true,
+    animateIn: "jello",
+    animateOut: "rollOut",
+    navPosition: 'bottom',
+ 
+  });
+});
+
 
 //события при выборе дефекта в #HOME
 document.querySelectorAll('li.home_defect_button').forEach((button) => {
@@ -99,7 +96,6 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
 
     
     document.querySelector("#home_order_button").classList.remove('active');
-    // document.querySelector("#home_order_button").classList.add('active');
     setTimeout(() => {document.querySelector("#home_order_button").classList.add('active')}, 200)
 
   });

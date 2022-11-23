@@ -40,6 +40,7 @@
     "i": "^0.3.7",
     "npm": "^8.15.0",
     "sweetalert": "^2.1.2",
-    "terser-webpack-plugin": "^5.3.3"
+    "terser-webpack-plugin": "^5.3.3",
+    "tiny-slider": "^2.9.4"
   }
 }

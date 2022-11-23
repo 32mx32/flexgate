@@ -30,6 +30,8 @@ html(lang='ru')
     meta(name="msapplication-TileColor" content="#000")
     meta(name="theme-color" content="#000")
     script(async defer data-website-id="bcecfb21-4e46-4946-a196-dc0f5d6f7be1" src="https://umami.internal-test.ru/umami.js")
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js")
+
   body(translate="no")
     header 
       div.header_left
@@ -100,47 +102,108 @@ html(lang='ru')
                 span Разбился дисплей Macbook, трещины на экране, изображение отсутствует или искажено
           button(id="home_order_button" class="bn5 active") Оставить заявку
 
-      section(class="track_events" id="questions")
-        div.questions_content
-          ul
-            li.element_animation
-              img(src="squircle.svg" loading="lazy" alt="Question Card")
-              img.questions_user(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
-              h3 
-                p У сына на экране Macbook появились полосы
+      section(class="track_events itcss" id="questions")
+        div(class="questions_content")
+          ul(class="questions_slider")
+            li 
+              img(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
+              h3 У сына на экране Macbook появились полосы
                 br
                 span Все дело в шлейфах, которые находятся на сгибе дисплея. Из-за попадания крошек и групных частиц пыли шлейфа ломаются. Это распространенная проблема экрана Macbook под названием Flexgate. Мы можем заменить эти шлейфа, без замены дисплея, и вы сможете сэкономить до 30000
-            li.element_animation
-              img(src="squircle.svg" loading="lazy" alt="Question Card")
-              img.questions_user(src="doc.png" loading="lazy" alt="Doc")
-              h3 
-                p Это невозможно! Как вы это делаете?
+            li 
+              img(src="doc.png" loading="lazy" alt="Doc")
+              h3 Это невозможно! Как вы это делаете?
                 br
                 span Раньше при любой поломке экрана Macbook приходилось менять дисплей с крышкой целиком - а это больше половины стоимости самого Macbook. Поэтому мы разработали технологию, и теперь мы можем производить именно ремонт дисплея Macbook, а не менять его. Это существенно сокращает стоимость и сроки
-            li.element_animation
-              img(src="squircle.svg" loading="lazy" alt="Question Card")
-              img.questions_user(src="smegol.png" loading="lazy" alt="Smegol")
+            li 
+              img(src="smegol.png" loading="lazy" alt="Smegol")
               h3 У моей прелести разбился экран, что мне теперь делать?
                 br
                 span Вместо замены дисплея целиком, мы можем заменить только матрицу Macbook. При этом все компоненты дисплея остаются родные, а значит будет работать TrueTone и подсветка клавиатуры. Вам не нужно будет ждать несколько недель, замена матрицы производится в течении одного дня
-            li.element_animation
-              img(src="squircle.svg" loading="lazy" alt="Question Card")
-              img.questions_user(src="storm_trooper.png" loading="lazy" alt="Storm Trooper")
+            li 
+              img(src="storm_trooper.png" loading="lazy" alt="Storm Trooper")
               h3 Сломал начальнику макбук, теперь там черный экран, помогите...
                 br
                 span При переломе шлейфа, который находится в крышке дисплея Macbook, могут появляться “волны” на подсветке, подсветка становится тусклой и неравномерной. При открытии дисплея или в разных положениях подсветка может пропадать. Нет необходимости менять экран целиком. Можно поменять отдельно шлейф подсветки на вашем Macbook в течении четырех часов
-            li.element_animation
-              img(src="squircle.svg" loading="lazy" alt="Question Card")
-              img.questions_user(src="dimon.png" loading="lazy" alt="Dimon")
+            li 
+              img(src="dimon.png" loading="lazy" alt="Dimon")
               h3 От друзей остался Macbook, у него не работает камера
                 br
                 span Скорее всего переломился шлейф, который отвечает за работу камеры на Macbook. При этом камера может периодически работать, а потом и вовсе перестать. Мы меняем шлейф камеры макбука и шлейф подсветки парой, чтобы исключить проблемы с подсветкой в дальнейшем
-            li.element_animation
-              img(src="squircle.svg" loading="lazy" alt="Question Card")
-              img.questions_user(src="marilyn.png" loading="lazy" alt="Marilyn")
+            li 
+              img(src="marilyn.png" loading="lazy" alt="Marilyn")
               h3 В самолете залили экран Макбука, что можно сделать?
                 br
                 span Если после попадания влаги на экран Macbook появились разводы и потеки на подсветке, значит влага попала в светорассеивающие пленки, отражатель и световод - все это можно поменять без замены дисплея в течении одного дня. В подарок вы получите полную чистку вашего Макбука внутри и снаружи
+            //- li 
+            //-   img(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
+            //-   h3 У сына на экране Macbook появились полосы
+            //-     br
+            //-     span Все дело в шлейфах, которые находятся на сгибе дисплея. Из-за попадания крошек и групных частиц пыли шлейфа ломаются. Это распространенная проблема экрана Macbook под названием Flexgate. Мы можем заменить эти шлейфа, без замены дисплея, и вы сможете сэкономить до 30000
+            //- li 
+            //-   img(src="doc.png" loading="lazy" alt="Doc")
+            //-   h3 Это невозможно! Как вы это делаете?
+            //-     br
+            //-     span Раньше при любой поломке экрана Macbook приходилось менять дисплей с крышкой целиком - а это больше половины стоимости самого Macbook. Поэтому мы разработали технологию, и теперь мы можем производить именно ремонт дисплея Macbook, а не менять его. Это существенно сокращает стоимость и сроки
+            //- li 
+            //-   img(src="smegol.png" loading="lazy" alt="Smegol")
+            //-   h3 У моей прелести разбился экран, что мне теперь делать?
+            //-     br
+            //-     span Вместо замены дисплея целиком, мы можем заменить только матрицу Macbook. При этом все компоненты дисплея остаются родные, а значит будет работать TrueTone и подсветка клавиатуры. Вам не нужно будет ждать несколько недель, замена матрицы производится в течении одного дня
+            //- li 
+            //-   img(src="storm_trooper.png" loading="lazy" alt="Storm Trooper")
+            //-   h3 Сломал начальнику макбук, теперь там черный экран, помогите...
+            //-     br
+            //-     span При переломе шлейфа, который находится в крышке дисплея Macbook, могут появляться “волны” на подсветке, подсветка становится тусклой и неравномерной. При открытии дисплея или в разных положениях подсветка может пропадать. Нет необходимости менять экран целиком. Можно поменять отдельно шлейф подсветки на вашем Macbook в течении четырех часов
+            //- li 
+            //-   img(src="dimon.png" loading="lazy" alt="Dimon")
+            //-   h3 От друзей остался Macbook, у него не работает камера
+            //-     br
+            //-     span Скорее всего переломился шлейф, который отвечает за работу камеры на Macbook. При этом камера может периодически работать, а потом и вовсе перестать. Мы меняем шлейф камеры макбука и шлейф подсветки парой, чтобы исключить проблемы с подсветкой в дальнейшем
+            //- li 
+            //-   img(src="marilyn.png" loading="lazy" alt="Marilyn")
+            //-   h3 В самолете залили экран Макбука, что можно сделать?
+            //-     br
+            //-     span Если после попадания влаги на экран Macbook появились разводы и потеки на подсветке, значит влага попала в светорассеивающие пленки, отражатель и световод - все это можно поменять без замены дисплея в течении одного дня. В подарок вы получите полную чистку вашего Макбука внутри и снаружи
+
+          //- ul()
+          //-   li
+          //-     img(src="squircle.svg" loading="lazy" alt="Question Card")
+          //-     img.questions_user(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
+          //-     h3 У сына на экране Macbook появились полосы
+          //-       br
+          //-       span Все дело в шлейфах, которые находятся на сгибе дисплея. Из-за попадания крошек и групных частиц пыли шлейфа ломаются. Это распространенная проблема экрана Macbook под названием Flexgate. Мы можем заменить эти шлейфа, без замены дисплея, и вы сможете сэкономить до 30000
+          //-   li
+          //-     img(src="squircle.svg" loading="lazy" alt="Question Card")
+          //-     img.questions_user(src="doc.png" loading="lazy" alt="Doc")
+          //-     h3 Это невозможно! Как вы это делаете?
+          //-       br
+          //-       span Раньше при любой поломке экрана Macbook приходилось менять дисплей с крышкой целиком - а это больше половины стоимости самого Macbook. Поэтому мы разработали технологию, и теперь мы можем производить именно ремонт дисплея Macbook, а не менять его. Это существенно сокращает стоимость и сроки
+          //-   li
+          //-     img(src="squircle.svg" loading="lazy" alt="Question Card")
+          //-     img.questions_user(src="smegol.png" loading="lazy" alt="Smegol")
+          //-     h3 У моей прелести разбился экран, что мне теперь делать?
+          //-       br
+          //-       span Вместо замены дисплея целиком, мы можем заменить только матрицу Macbook. При этом все компоненты дисплея остаются родные, а значит будет работать TrueTone и подсветка клавиатуры. Вам не нужно будет ждать несколько недель, замена матрицы производится в течении одного дня
+          //-   li
+          //-     img(src="squircle.svg" loading="lazy" alt="Question Card")
+          //-     img.questions_user(src="storm_trooper.png" loading="lazy" alt="Storm Trooper")
+          //-     h3 Сломал начальнику макбук, теперь там черный экран, помогите...
+          //-       br
+          //-       span При переломе шлейфа, который находится в крышке дисплея Macbook, могут появляться “волны” на подсветке, подсветка становится тусклой и неравномерной. При открытии дисплея или в разных положениях подсветка может пропадать. Нет необходимости менять экран целиком. Можно поменять отдельно шлейф подсветки на вашем Macbook в течении четырех часов
+          //-   li
+          //-     img(src="squircle.svg" loading="lazy" alt="Question Card")
+          //-     img.questions_user(src="dimon.png" loading="lazy" alt="Dimon")
+          //-     h3 От друзей остался Macbook, у него не работает камера
+          //-       br
+          //-       span Скорее всего переломился шлейф, который отвечает за работу камеры на Macbook. При этом камера может периодически работать, а потом и вовсе перестать. Мы меняем шлейф камеры макбука и шлейф подсветки парой, чтобы исключить проблемы с подсветкой в дальнейшем
+          //-   li
+          //-     img(src="squircle.svg" loading="lazy" alt="Question Card")
+          //-     img.questions_user(src="marilyn.png" loading="lazy" alt="Marilyn")
+          //-     h3 В самолете залили экран Макбука, что можно сделать?
+          //-       br
+          //-       span Если после попадания влаги на экран Macbook появились разводы и потеки на подсветке, значит влага попала в светорассеивающие пленки, отражатель и световод - все это можно поменять без замены дисплея в течении одного дня. В подарок вы получите полную чистку вашего Макбука внутри и снаружи
+
       section(class="track_events" id="compare")
         div(class="compare_content")
           ul(class="compare_list")

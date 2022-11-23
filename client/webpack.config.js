@@ -18,7 +18,7 @@ const commonConfig = {
     // other: [
       // PATHS.source + "/scripts/modal.js",
       // PATHS.source + "/scripts/form.js",
-      // PATHS.source + "/scripts/simple-adaptive-slider.js",
+      // PATHS.source + "/scripts/tiny-slider.js",
     // ]
   },
   output: {
@@ -32,6 +32,8 @@ const commonConfig = {
       chunks: ['modal', 'other', 'index'],
       template: PATHS.source + '/index.pug',
       inject: 'body',
+      // scriptLoading: "blocking",x
+      // inject: "head"
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({

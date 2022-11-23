@@ -1,7 +1,7 @@
 @import form.sass
 @import button.sass
 @import hystmodal.css
-// @import simple-adaptive-slider.css
+@import tiny-slider.css
 
 $header-height: 70px
 
@@ -54,6 +54,41 @@ $header-height: 70px
     // transform: translateY(0%)
     // transition: opacity 5s;
 
+.tns-outer
+    button
+        &[data-action="stop"]
+            display: none
+.tns-nav
+    text-align: center
+    bottom: -20px;
+    position: relative;
+    button
+        width: 12px;
+        height: 12px;
+        background: rgba(71, 67, 67, 0.5);
+        margin: 0 14px;
+        border-radius: 50%;
+    button.tns-nav-active
+        background: rgba(71, 67, 67, 0.9);
+.tns-controls
+    position: relative;
+    bottom: 280px;
+    button
+        width: 50px;
+        height: 50px;
+        background: none;
+        border-radius: 50%;
+        // border: 1px solid #828282;
+        background: rgba(71, 67, 67, 0.1);
+        &[data-controls="prev"]
+            float: left
+            margin-left: -23%;
+        &[data-controls="next"]
+            float: right
+            margin-right: -23%;
+
+
+
 html
     height: 100%
     background-color: #000
@@ -66,9 +101,9 @@ body
     min-height: 100%
     margin: 0 auto
     grid-template-areas: "header header" "main main" "footer footer"
-
     @media screen and (max-width: 600px)
         width: 100%
+    
     header
         z-index: 1
         grid-area: header
@@ -112,7 +147,6 @@ body
             img
                 width: 20px
                 height: 20px
-
         @media screen and (max-width: 600px)
             grid-template-columns: 35% 65%
             grid-template-rows: 1fr
@@ -125,6 +159,7 @@ body
                 display: none
             div.header_rigth
                 margin-right: -65%
+    
     main
         grid-area: main
         width: 100%
@@ -189,7 +224,6 @@ body
                         @keyframes text
                             0%
                                 transform: translate(0, 0)
-
                             100%
                                 transform: translate(-95%, 0)
             div.home_selector
@@ -220,13 +254,10 @@ body
                         //    filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
                     li.active
                         filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
-
-        @media screen and (max-width: 600px)
-            section#home
+            @media screen and (max-width: 600px)
                 padding-top: 20%
                 grid-template-rows: 35% 65%
                 div.home_content
-                    // margin-top: -20%;
                     align-self: center
                     img.home_content_title
                         width: 95%
@@ -244,7 +275,6 @@ body
                         display: grid
                         grid-template-columns: 23% 23% 11% 31%
                         grid-template-rows: 25% 25% 30%
-                        // gap: 8px 8px
                         gap: 3% 3%;
                         grid-template-areas: "a a a c" "b b b c" "d d e e"
                         align-items: center
@@ -259,7 +289,6 @@ body
                             text-align: left
                             padding: 0px 5%;
                             padding-left: 10%
-                            // padding-right: 10px;
                             h3
                                 font-size: 13px
                                 font-weight: 500
@@ -286,13 +315,11 @@ body
                     height: 48px
                     margin-top: -5px
                     background: #131318
-                    // border: 1px solid #A8A9AE
                     border-radius: 11px
                     font-size: 13px;
                     font-weight: 500;
                     text-transform: uppercase
                     cursor: pointer
-                    // transition: 3s;
                 button.bn5.active:before
                     opacity: 1 // чтобы кнопочка светилась
                     transition: opacity 3s;
@@ -304,46 +331,80 @@ body
             align-items: center
             justify-items: center
             div.questions_content
-                ul
-                    display: grid
-                    grid-template-columns: 1fr 1fr
-                    grid-template-rows: 1fr 1fr 1fr
-                    align-items: center
-                    justify-items: center
-                    grid-column-gap: 40px
-                    grid-row-gap: 40px
-                    li
-                        position: relative
-                        img.questions_user
-                            position: absolute
-                            top: 10%
-                            left: 3%
-                            width: 135px
-                        h3
-                            position: absolute
-                            width: 60%
-                            left: 35%
-                            top: 7%
-                            line-height: 15px
-                            font-size: 13px
-                            text-transform: uppercase
-                            color: #000
-                            p
-                                color: #000
-                                font-size: 13px
-                                margin-bottom: -11px
-                            span
-                                font-size: 12px
-                                text-transform: none
-                                font-weight: 400
-                                color: #000
-                    // li.element_animation
-                    //     opacity: 0
-                    // li.element_animation.element_show
-                    //     opacity: 1
-                    //     transition: opacity 3s
+                // ul
+                //     display: grid
+                //     grid-template-columns: 1fr 1fr
+                //     grid-template-rows: 1fr 1fr 1fr
+                //     align-items: center
+                //     justify-items: center
+                //     grid-column-gap: 40px
+                //     grid-row-gap: 40px
+                //     li
+                //         position: relative
+                //         img.questions_user
+                //             position: absolute
+                //             top: 10%
+                //             left: 3%
+                //             width: 135px
+                //         h3
+                //             position: absolute
+                //             width: 60%
+                //             left: 35%
+                //             top: 7%
+                //             line-height: 15px
+                //             font-size: 13px
+                //             text-transform: uppercase
+                //             color: #000
+                //             p
+                //                 color: #000
+                //                 font-size: 13px
+                //                 margin-bottom: -11px
+                //             span
+                //                 font-size: 12px
+                //                 text-transform: none
+                //                 font-weight: 400
+                //                 color: #000
             @media screen and (max-width: 600px)
-                display: none
+                div.questions_content
+                    width: 250px
+                    height: 100%
+                    ul.questions_slider
+                        li
+                            // border: 0.5px solid #828282
+                            background: rgba(71, 67, 67, 0.1);
+                            border-radius: 33px
+                            height: 500px
+                            padding: 5px 5px 5px 12px
+                            img
+                                display: block
+                                margin: 0 auto
+                                width: 100px
+                            h3
+                                padding: 8px
+                                margin-top: 8px
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 15px;
+                                // text-transform: uppercase;
+                                color: #fff;
+                                font-size: 19px;
+                                font-weight: 600;
+                                line-height: 20px;
+                                span
+                                    display: block
+                                    margin-top: 8px
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    line-height: 95%;
+                                    text-transform: initial;
+                                    color: #8e8e8e
+                                    font-size: 15px;
+                                    font-weight: 400;
+                                    line-height: 20px;
+
+
+                        
+
         section#compare
             display: grid
             align-items: center
