@@ -1,4 +1,4 @@
-@import form.sass
+@import form.css
 @import button.sass
 @import hystmodal.css
 @import tiny-slider.css
@@ -66,26 +66,28 @@ $header-height: 70px
         width: 12px;
         height: 12px;
         background: rgba(71, 67, 67, 0.5);
-        margin: 0 14px;
+        margin: 0 10px;
         border-radius: 50%;
     button.tns-nav-active
         background: rgba(71, 67, 67, 0.9);
 .tns-controls
     position: relative;
-    bottom: 280px;
+    bottom: 500px;
     button
         width: 50px;
-        height: 50px;
+        height: 500px;
         background: none;
-        border-radius: 50%;
+        font-size: 30px;
+        color: rgb(71, 67, 67);
+        // border-radius: 50%;
         // border: 1px solid #828282;
-        background: rgba(71, 67, 67, 0.1);
+        // background: rgba(71, 67, 67, 0.1);
         &[data-controls="prev"]
             float: left
-            margin-left: -23%;
+            margin-left: -21%;
         &[data-controls="next"]
             float: right
-            margin-right: -23%;
+            margin-right: -21%;
 
 
 
@@ -168,6 +170,7 @@ body
             background-color: #000
             height: 100vh
             min-height: 700px
+        
         section#home
             display: grid
             grid-template-columns: 1fr
@@ -255,7 +258,7 @@ body
                     li.active
                         filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
             @media screen and (max-width: 600px)
-                padding-top: 20%
+                padding-top: 35%
                 grid-template-rows: 35% 65%
                 div.home_content
                     align-self: center
@@ -311,8 +314,8 @@ body
                         li#defect_button_e
                             grid-area: e
                 button#home_order_button
-                    width: 60%
-                    height: 48px
+                    width: 190px
+                    height: 40px
                     margin-top: -5px
                     background: #131318
                     border-radius: 11px
@@ -365,45 +368,45 @@ body
                 //                 font-weight: 400
                 //                 color: #000
             @media screen and (max-width: 600px)
+                margin-top: 20%
+                height: 80vh
+                min-height: 80vh
                 div.questions_content
-                    width: 250px
+                    width: 270px
                     height: 100%
                     ul.questions_slider
+                        // margin-left: -45px;
                         li
                             // border: 0.5px solid #828282
-                            background: rgba(71, 67, 67, 0.1);
+                            // background: rgba(71, 67, 67, 0.1);
                             border-radius: 33px
                             height: 500px
-                            padding: 5px 5px 5px 12px
+                            // padding: 10px;
+                            // border: 1px solid #828282;
+                            // margin: 0 15px;
+                            padding: 10px 35px;
+                            box-shadow: inset 0px 0px 15px #eb5757;
                             img
                                 display: block
                                 margin: 0 auto
-                                width: 100px
+                                margin-top: 24px
+                                width: 35%
                             h3
                                 padding: 8px
                                 margin-top: 8px
-                                font-size: 14px;
-                                font-weight: 500;
-                                line-height: 15px;
-                                // text-transform: uppercase;
-                                color: #fff;
-                                font-size: 19px;
-                                font-weight: 600;
-                                line-height: 20px;
+                                font-size: 13px;
+                                // font-weight: 500;
+                                line-height: 14px;
+                                text-transform: uppercase;
+                                color: #8e8e8e
                                 span
                                     display: block
-                                    margin-top: 8px
+                                    margin-top: 16px
                                     font-size: 14px;
                                     font-weight: 400;
-                                    line-height: 95%;
+                                    line-height: 18px
                                     text-transform: initial;
                                     color: #8e8e8e
-                                    font-size: 15px;
-                                    font-weight: 400;
-                                    line-height: 20px;
-
-
-                        
 
         section#compare
             display: grid
@@ -429,8 +432,9 @@ body
                         padding-right: 50px
                         cursor: pointer
                         &:hover
-                            color: #EE5A00
+                            // color: #EE5A00
                             font-size: 15px
+                            opacity: 0.9
                         div
                             display: grid
                             align-items: center
@@ -490,7 +494,62 @@ body
                 button.bn5:before
                     opacity: 1 // чтобы кнопочка светилась
             @media screen and (max-width: 600px)
-                display: none
+                div.compare_content
+                    width: 100%
+                    ul.compare_list
+                        width: 95%
+                        li
+                            color: dimgrey;
+                            font-size: 12px
+                            line-height: 14px
+                            grid-template-columns: 51% 38% 38%
+                            padding-left: 10px
+                            padding-right: 75px
+                            height: 34px
+                            text-transform: none
+                            div
+                                margin: 0
+                                background: none
+                                img
+                                    width: 12px
+                                p
+                                    font-size: 12px
+                                    opacity: 60%
+                        li.compare_list.odd_item
+                            background-color: rgba(51, 51, 51, 0.2) !important
+                            // background-color: white
+                        li.compare_list.title
+                            opacity: 50%
+                            height: 40px
+                            background: rgba(51, 51, 51, 0.3) !important
+                            p:nth-child(2)
+                                font-size: 20px !important
+                            span
+                                font-size: 20px !important
+                                // margin-top: 3px;
+                        li.compare_list.subtitle
+                            background: none
+                            height: 60px
+                            p
+                                font-size: 18px
+                                line-height: 16px;
+                                text-transform: uppercase;
+                                span
+                                    font-size: 18px
+                            div.compare_list_start_price
+                                p:nth-child(1)
+                                    font-size: 8px
+                                p:nth-child(2)
+                                    font-size: 16px
+                                    span
+                                        font-size: 20px
+                                p:nth-child(3)
+                                    font-size: 8px
+                                  
+                    button.compare_button
+                        margin-left: 0px
+                        font-size: 13px;
+                                        
         section#contacts
             display: grid
             align-items: center
@@ -530,47 +589,26 @@ body
                             grid-template-columns: 25% 25%
                             img
                                 cursor: pointer
-                    div.contacts_form
-                        width: 220px
-                        p
-                            font-size: 11px
-                            color: #828282
-                        form
-                            div.user_box
-                                position: relative
-                                margin: 7px 0
-                                input
-                                    width: 100%
-                                    height: 25px
-                                    background: none
-                                    border: 0.5px solid #828282
-                                    border-radius: 6px
-                                label
-                                    position: absolute
-                                    left: 15px
-                                    font-size: 7px
-                                    line-height: 25px
-                                    color: #828282
-                            div:nth-child(3)
-                                input
-                                    height: 160px
-                                    border-radius: 10px
-                            button
-                                display: block
-                                margin: 0 auto
-                                width: 150px
-                                height: 25px
-                                border: 0.5px solid #828282
-                                background-color: rgba(33, 33, 33, 0.5)
-                                border-radius: 6px
-                                margin-top: 15px
-                                font-size: 8px
-                                text-transform: uppercase
-                                // cursor: pointer
-                                &:hover
-                                    background-color: rgba(33, 33, 33, 0.99)
             @media screen and (max-width: 600px)
-                display: none
+                div.contacts_content
+                    width: 300px
+                    height: 100%
+                    img
+                        display: none
+                    div.contacts_block
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr 1fr;
+                        grid-template-areas: "a" "b"
+                        gap: 10% 0%;
+                        right: 0
+                        width: 100%
+                        ul.contacts_list
+                            grid-area: b
+                            // display: none
+                        div.contacts_form
+                            grid-area: a
+                            // width: 300px
+
     footer
         grid-area: footer
         width: 1030px

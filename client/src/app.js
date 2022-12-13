@@ -32,7 +32,7 @@ import './images/questions/marilyn.png';
 
 import './images/maps.png';
 
-import './scripts/form.js';
+// import './scripts/form.js';
 import './scripts/modal.js';
 
 
@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
     items: 1,
     slideBy: 'page',
     // autoplay: true,
-    // gutter: 10, //Расстояние между слайдами
+    // gutter: 20, //Расстояние между слайдами
     // edgePadding: 10, //Отступ снаружи
     controlsPosition: 'bottom',
     controlsText: ['<', '>'],
@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
     animateIn: "jello",
     animateOut: "rollOut",
     navPosition: 'bottom',
- 
+    preventScrollOnTouch: 'force'
   });
 });
 

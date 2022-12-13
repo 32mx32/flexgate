@@ -1,27 +1,18 @@
-//- https://codepen.io/soufiane-khalfaoui-hassani/pen/LYpPWda
-//- https://codepen.io/ainalem/pen/GRqPwoz
-
-div(class='login_box')
-  h2 Оставить заявку
-  form(id='telegram_form')
-    div(class='user_box')
-      input(type='text' name='name' maxlength='20' required='')
-      label Ваше имя
-    div(class='user_box')
-      input(type='tel' name='phone' maxlength='20' required='')
-      label Телефон
-    div(class='user_box')
-      input(type='text' name='model' maxlength='50' required='')
-      label Модель устройства
-    div(class='user_box')
-      input(type='text' name='description' maxlength='80' required='')
-      label Неисправность
-    div(class='checkbox')
-      label(class='container') Хочу чтобы мне перезвонили
-        input(type='checkbox' id="checkbox" name='feedback')
-        span(class='checkmark')
-    button(class="sendform_button" type='submit' title="Отправляя форму, вы даете согласие на обработку своих данных") Отправить
-      span
-      span
-      span
-      span
+//- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+div(class="container contact-us-section")
+  div(class="section-title")
+    h2 Остались вопросы
+      span Напишите нам
+  form(accept="javascript:void(0)" method="POST" action="javascript:void(0)" class="contact-us-form")
+    div(class="form-group")
+      label(for="inputName") Имя : *
+      input(placeholder="ваше имя" type="text" required id="inputName" name="name")
+    div(class="form-group")
+      label(for="inputEmailAddress") Телефон : *
+      input(placeholder="номер телефона" type="tel" required id="inputTelephoneNumber" name="telephoneNumber")
+    div(class="form-group")
+      label(for="inputComment") Сообщение :
+      textarea(placeholder="Сообщение" required id="inputComment" rows="2" name="inputMessage")
+    div(class="form-group clearfix")
+      button(data-id="#accessories-holder" class="red-select-btn model-selector btn-send-message")
+        span Отправить
