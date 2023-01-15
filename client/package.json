@@ -36,6 +36,9 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "flickity": "^3.0.0",
+    "flickity-fullscreen": "^2.0.0",
+    "flickity-imagesloaded": "^2.0.0",
     "hystmodal": "^0.5.1",
     "i": "^0.3.7",
     "npm": "^8.15.0",

@@ -4,6 +4,8 @@ import swal from 'sweetalert';
 const form = document.getElementById('telegram_form');
 const closeModal = document.querySelector('.hystmodal__close');
 
+console.log(form);
+
 const sendData = async (data) => {
   try {
     await axiosInstance.post('/sendForm', data);

@@ -1,32 +1,35 @@
-.contact-us-section{
-    /* background-color: #000; */
-    /* min-height: 400px; */
-    /* margin-top: 50px; */
-    /* position: relative;
-    margin-bottom: 50px;
-    box-shadow: 0 10px 8px -7px rgba(0,0,0,0.5); */
-    width: 100%;
-}        
-.contact-us-section h2{
-    color: #EB5757;
-    text-transform: uppercase;
-    font-weight: bold;
+.contact-us-section {
+  /* background-color: #000; */
+  background: rgba(0, 0, 0, 0.7);;
+  min-height: 400px;
+  margin-top: 50px;
+  position: relative;
+  margin-bottom: 50px;
+  /* box-shadow: 0 10px 8px -7px rgba(0, 0, 0, 0.5); */
+  width: 100%;
 }
-.contact-us-section h2 span{
-    display: block;
-    text-transform: unset;
-    font-size: 18px;
-    color: #fff;
-    opacity: 0.6;
-    font-weight: normal;
-    letter-spacing: 1px;
+.contact-us-section h2 {
+  /* color: #EB5757; */
+  color: #ee5a00;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 80%;
+}
+.contact-us-section span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #ee5a00;
+  opacity: 0.8;
+  font-weight: normal;
+  letter-spacing: 1px;
 }
 .contact-us-section .section-title {
-    background-color: rgba(255,255,255,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  /* background-color: rgba(255,255,255,0.1); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 /* .contact-us-section .section-title:before{
     height: 26px;
@@ -37,86 +40,118 @@
     bottom: 48px;
     right: -13px;
 } */
-.contact-us-form{
-    margin: 35px 25px;
+.contact-us-form {
+  /* margin: 15px 25px; */
+  padding: 15px 25px;
 }
 /* .contact-us-form .form-group{
     margin-bottom: 30px;
 } */
-.contact-us-form label{
-    color: rgba(255,255,255,0.5);
-    font-size: 14px;
-    margin-bottom: 0px;
+.contact-us-form label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  margin-bottom: 0px;
 }
 .contact-us-form input,
 .contact-us-form textarea {
-    margin: 0px 0px 10px 0px;
-    width: 100%;
-    display: block;
-    border: none;
-    padding: 10px 0;
-    border-bottom: solid 1px #515151;
-    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-   background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) calc(100% - 2px), #EE5A00 calc(100% - 2px), #EE5A00 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) calc(100% - 2px), #EE5A00 calc(100% - 2px), #EE5A00 100%);
-    background-position: 0 0;
-    background-size: 0px 100%;
-    background-repeat: no-repeat;
-    color: #ffffff;
-    font-size: 18px;
-    resize: none;
+  margin: 0px 0px 10px 0px;
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #515151;
+  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) calc(100% - 2px),
+    #ee5a00 calc(100% - 2px),
+    #ee5a00 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) calc(100% - 2px),
+    #ee5a00 calc(100% - 2px),
+    #ee5a00 100%
+  );
+  background-position: 0 0;
+  background-size: 0px 100%;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  /* font-size: 18px; */
+  resize: none;
 }
 
-.contact-us-form input:focus, 
-.contact-us-form input:valid, 
-.contact-us-form textarea:focus,  
+.contact-us-form input:focus,
+.contact-us-form input:valid,
+.contact-us-form textarea:focus,
 .contact-us-form textarea:valid {
-    box-shadow: none;
-    outline: none;
-    background-size: 100% 100%;
-    border-bottom: solid 1px #cc0001;
+  box-shadow: none;
+  outline: none;
+  background-size: 100% 100%;
+  border-bottom: solid 1px #cc0001;
 }
 .contact-us-form input::-webkit-input-placeholder,
 .contact-us-form textarea::-webkit-input-placeholder {
-    font-family: 'roboto', sans-serif;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+  font-family: 'roboto', sans-serif;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .contact-us-form input:focus::-webkit-input-placeholder,
 .contact-us-form input:valid::-webkit-input-placeholder,
 .contact-us-form textarea:focus::-webkit-input-placeholder,
 .contact-us-form textarea:valid::-webkit-input-placeholder {
-    /* color: #1abc9c; */
-    /* color: #EE5A00; */
-    opacity: 0;
-    font-size: 11px;
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
-    visibility: visible !important;
+  /* color: #1abc9c; */
+  /* color: #EE5A00; */
+  opacity: 0;
+  font-size: 11px;
+  -webkit-transform: translateY(-20px);
+  transform: translateY(-20px);
+  visibility: visible !important;
 }
-button.btn-send-message{
-    margin-right: 11%;
-    border-radius: 8px;
-    /* -moz-border-radius: 0px;
+button.btn-send-message {
+  display: block;
+  /* margin-right: 11%; */
+  border-radius: 8px;
+  /* -moz-border-radius: 0px;
     -webkit-border-radius: 0px; */
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: unset;
-    box-shadow: 0px 0px 27px 0px rgba(0,0,0,0.25);
-    padding:6px 25px;
-    /* border:0px; */
-    background-color: #ffb808;
-    /* background-color: #EE5A00; */
-    text-transform: uppercase;
-    cursor: pointer;
-    background-color: #6a6868;
+  /* float: right; */
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: unset;
+  /* box-shadow: 0px 0px 27px 0px rgba(0,0,0,0.25); */
+  padding: 12px 40px;
+  padding-bottom: 12px;
+  /* border:0px; */
+  /* background-color: #ffb808; */
+  /* background-color: #EE5A00; */
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #2e2d2d;
 }
 button.btn-send-message:hover {
-    background-color: #737171;
+  opacity: 0.8;
 }
 
 button.btn-send-message span {
-    color: #000;
+  letter-spacing: 1.3px;
+  font-weight: 400;
+  color: #ee5a00;
+  opacity: 0.8;
 }
+
+div.consent {
+  margin: 30px auto;
+  width: 100%;
+}
+div.consent p {
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    opacity: 0.5;
+  }

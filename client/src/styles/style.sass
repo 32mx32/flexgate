@@ -1,9 +1,9 @@
 @import form.css
+@import toggle.css
 @import button.sass
+@import flickity.css
 @import hystmodal.css
-@import tiny-slider.css
-
-$header-height: 70px
+@import '../fonts/coolvetica/coolvetica.css'
 
 @mixin no-scroll-bar()
     &::-webkit-scrollbar
@@ -17,7 +17,6 @@ $header-height: 70px
     &::-webkit-scrollbar-track
         height: 0
         width: 0
-
 @mixin custom-scroll-bar()
     &::-webkit-scrollbar
         border-radius: 10px
@@ -31,6 +30,10 @@ $header-height: 70px
     &::-webkit-scrollbar-track
         border-radius: 10px
 
+
+
+$header-height: 70px
+
 *
     margin: 0
     padding: 0
@@ -40,54 +43,40 @@ $header-height: 70px
     list-style: none
     text-decoration: none
     // font-family: "Inter", system-ui
-    font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif
-    // font-family: "Lato", sans-serif
+    // font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif
+    font-family: Coolvetica
     font-size: 16px
     color: #A8A9AE
 
-.element_animation
-    opacity: 0
-    // transform: translateY(90%)
-.element_animation.element_show
-    opacity: 1
-    transition: all 0.9s
-    // transform: translateY(0%)
-    // transition: opacity 5s;
-
-.tns-outer
-    button
-        &[data-action="stop"]
-            display: none
-.tns-nav
-    text-align: center
-    bottom: -20px;
-    position: relative;
-    button
-        width: 12px;
-        height: 12px;
-        background: rgba(71, 67, 67, 0.5);
-        margin: 0 10px;
-        border-radius: 50%;
-    button.tns-nav-active
-        background: rgba(71, 67, 67, 0.9);
-.tns-controls
-    position: relative;
-    bottom: 500px;
-    button
-        width: 50px;
-        height: 500px;
-        background: none;
-        font-size: 30px;
-        color: rgb(71, 67, 67);
-        // border-radius: 50%;
-        // border: 1px solid #828282;
-        // background: rgba(71, 67, 67, 0.1);
-        &[data-controls="prev"]
-            float: left
-            margin-left: -21%;
-        &[data-controls="next"]
-            float: right
-            margin-right: -21%;
+.flickity-button
+    background: transparent
+    opacity: 0.3
+// .flickity-prev-next-button
+//     width: 100px
+//     height: 100px
+// button.flickity-button.previous
+//     left: 0px
+.flickity-prev-next-button.previous
+    left: -30px
+.flickity-prev-next-button.next
+    right: -30px
+/* icon color */
+.flickity-button-icon
+    fill: white
+/* hide disabled button */
+.flickity-button:disabled
+    display: none
+.flickity-button:hover
+    background: none
+/* position dots up a bit */
+// .flickity-page-dots
+//     bottom: -22px
+// /* dots are lines */
+// .flickity-page-dots.dot
+//     height: 4px
+//     width: 40px
+//     margin: 0
+//     border-radius: 0
 
 
 
@@ -131,8 +120,10 @@ body
                 cursor: pointer
                 span:nth-child(2)
                     font-size: 9px
+                    font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif
                 span:nth-child(3)
                     font-size: 14px
+                    font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif
         nav.header_center
             ul
                 display: grid
@@ -170,7 +161,10 @@ body
             background-color: #000
             height: 100vh
             min-height: 700px
-        
+            @media screen and (max-width: 600px)
+                height: 80vh
+                min-height: 800px
+            
         section#home
             display: grid
             grid-template-columns: 1fr
@@ -247,18 +241,21 @@ body
                         width: 155px
                         height: 32px
                         border-radius: 8px
-                        background: #131318
+                        background-color: #131318
                         font-size: 12px
                         text-transform: uppercase
                         margin: 0px 7px
                         cursor: pointer
                         transition: 0.15s linear
+                        // border: solid #414450 1px
                         &:hover
                         //    filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
                     li.active
-                        filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
+                        filter: drop-shadow(0px 0px 1px rgba(238, 90, 0, 0.75))
             @media screen and (max-width: 600px)
-                padding-top: 35%
+                // padding-top: 30%
+                padding-top: $header-height
+                margin-top: $header-height
                 grid-template-rows: 35% 65%
                 div.home_content
                     align-self: center
@@ -272,37 +269,41 @@ body
                     div.home_content_info
                         display: none
                 div.home_selector
-                    margin-top: 5%
+                    margin-top: 3%
                     width: 100%
                     ul
                         display: grid
-                        grid-template-columns: 23% 23% 11% 31%
-                        grid-template-rows: 25% 25% 30%
-                        gap: 3% 3%;
+                        grid-template-columns: 23% 23% 12% 34%
+                        grid-template-rows: 28% 25% 30%
+                        gap: 2% 1.7%
                         grid-template-areas: "a a a c" "b b b c" "d d e e"
                         align-items: center
-                        justify-items: unset;
+                        justify-items: unset
                         width: 100%
                         height: 300px
-                        padding: 0 8%;
+                        padding: 0 8%
                         li
                             width: 100%
                             height: 100%
-                            border-radius: 11px;
+                            border-radius: 11px
                             text-align: left
-                            padding: 0px 5%;
+                            padding: 0px 5%
                             padding-left: 10%
                             h3
                                 font-size: 13px
-                                font-weight: 500
-                                line-height: 14px
+                                font-weight: 400
+                                line-height: 16px
+                                letter-spacing: 0.3px
+                                opacity: 0.9
                                 span
                                     display: block
                                     margin-top: 6px
                                     font-size: 12px
-                                    font-weight: 400
+                                    font-weight: 300
                                     line-height: 95%
                                     text-transform: initial
+                                    letter-spacing: 0.3px
+                                    opacity: 0.6
                         li#defect_button_a
                             grid-area: a
                         li#defect_button_b
@@ -314,26 +315,29 @@ body
                         li#defect_button_e
                             grid-area: e
                 button#home_order_button
-                    width: 190px
-                    height: 40px
-                    margin-top: -5px
+                    width: 80%
+                    height: 50px
+                    margin-top: -30px
                     background: #131318
                     border-radius: 11px
-                    font-size: 13px;
-                    font-weight: 500;
+                    font-size: 13px
+                    font-weight: 400
+                    letter-spacing: 0.4px
                     text-transform: uppercase
                     cursor: pointer
+                    opacity: 0.7
                 button.bn5.active:before
                     opacity: 1 // чтобы кнопочка светилась
-                    transition: opacity 3s;
-
+                    transition: opacity 3s
+                   
         section#questions
             display: grid
             grid-template-columns: 1fr
             grid-template-rows: 1fr
             align-items: center
-            justify-items: center
+            // justify-items: center
             div.questions_content
+                margin: 0 auto
                 // ul
                 //     display: grid
                 //     grid-template-columns: 1fr 1fr
@@ -368,24 +372,39 @@ body
                 //                 font-weight: 400
                 //                 color: #000
             @media screen and (max-width: 600px)
-                margin-top: 20%
-                height: 80vh
-                min-height: 80vh
+                // margin-top: 20%
+                // height: 20vh
+                // min-height: 80vh
                 div.questions_content
-                    width: 270px
-                    height: 100%
+                    width: 350px
+                    // height: 100%
                     ul.questions_slider
+                        width: 100%
+                        // display: flex
                         // margin-left: -45px;
                         li
+                            // display: block
                             // border: 0.5px solid #828282
-                            // background: rgba(71, 67, 67, 0.1);
-                            border-radius: 33px
+                            // background: rgba(19, 19, 24, 0.3)
+                            // background: #131318
+                            border-radius: 20px
                             height: 500px
                             // padding: 10px;
-                            // border: 1px solid #828282;
-                            // margin: 0 15px;
-                            padding: 10px 35px;
-                            box-shadow: inset 0px 0px 15px #eb5757;
+                            // border: 1px solid #828282
+                            margin: 0 15px
+                            padding: 10px 35px
+                            box-shadow: inset 0px 0px 1px #828282
+
+                            // float: right;
+                            // max-width: 201px;
+                            // width: 100%;
+                            // height: 335px;
+                            // border-radius: 15px;
+                            // counter-increment: carousel-cell;
+
+
+
+
                             img
                                 display: block
                                 margin: 0 auto
@@ -394,19 +413,26 @@ body
                             h3
                                 padding: 8px
                                 margin-top: 8px
-                                font-size: 13px;
-                                // font-weight: 500;
-                                line-height: 14px;
-                                text-transform: uppercase;
-                                color: #8e8e8e
+                                font-size: 16px
+                                font-weight: 400
+                                line-height: 18px
+                                letter-spacing: 0.5px;
+                                text-transform: uppercase
+                                // color: #fff
+                                opacity: 0.9
                                 span
                                     display: block
                                     margin-top: 16px
-                                    font-size: 14px;
-                                    font-weight: 400;
-                                    line-height: 18px
+                                    // font-size: 14px;
+                                    // font-weight: 400;
+                                    // line-height: 18px
+                                    // text-transform: initial;
+                                    // color: #8e8e8e
+                                    font-weight: 300;
+                                    // line-height: 95%;
                                     text-transform: initial;
-                                    color: #8e8e8e
+                                    letter-spacing: 0.5px;
+                                    opacity: 0.6;
 
         section#compare
             display: grid
@@ -456,6 +482,7 @@ body
                     li.compare_list.subtitle
                         height: 88px
                         background: linear-gradient(180deg, #333333 0%, #202020 100%)
+                        opacity: 0.8
                         p
                             font-size: 24px
                             font-weight: 400
@@ -491,22 +518,27 @@ body
                     border-radius: 10px
                     text-transform: uppercase
                     cursor: pointer
+                    letter-spacing: 0.9px
+                    opacity: 0.9
+                    color: #A8A9AE
                 button.bn5:before
-                    opacity: 1 // чтобы кнопочка светилась
+                    opacity: 0 // чтобы кнопочка светилась
             @media screen and (max-width: 600px)
                 div.compare_content
                     width: 100%
                     ul.compare_list
-                        width: 95%
+                        width: 90%
                         li
                             color: dimgrey;
                             font-size: 12px
                             line-height: 14px
+                            letter-spacing: 0.9px
                             grid-template-columns: 51% 38% 38%
                             padding-left: 10px
                             padding-right: 75px
                             height: 34px
-                            text-transform: none
+                            // text-transform: none
+                            font-weight: 300
                             div
                                 margin: 0
                                 background: none
@@ -525,7 +557,8 @@ body
                             p:nth-child(2)
                                 font-size: 20px !important
                             span
-                                font-size: 20px !important
+                                font-size: 14px !important
+                                margin-top: 3px
                                 // margin-top: 3px;
                         li.compare_list.subtitle
                             background: none
@@ -596,10 +629,10 @@ body
                     img
                         display: none
                     div.contacts_block
-                        grid-template-columns: 1fr;
-                        grid-template-rows: 1fr 1fr;
+                        grid-template-columns: 100%
+                        grid-template-rows: 50% 30%
                         grid-template-areas: "a" "b"
-                        gap: 10% 0%;
+                        // gap: 10% 0%;
                         right: 0
                         width: 100%
                         ul.contacts_list

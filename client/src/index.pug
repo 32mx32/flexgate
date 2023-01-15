@@ -1,38 +1,10 @@
-- const HEAD_TITLE = "FlexGate - Замена и ремонт матрицы дисплея (экрана) Macbook и iMac в Ростове-на-Дону - Сервисный центр Apple mymac";
-- const HEAD_DESCRIPTION = "😊 Замена матрицы дисплея Macbook. Замена шлефов матрицы (Flexgate), замена и ремонт подсветки. Ремонт дисплея Macbook. Замена стекла iMac";
-- const HEAD_OG_IMAGE = "https://flaxgate.ru/hand-phone.jpg"
-- const HEAD_OG_SITENAME = "Ремонт дисплея и замена матрицы Macbook и iMac"
-
 doctype html
 html(lang='ru')
-  head
-    meta(charset="UTF-8")
-    title= HEAD_TITLE
-    meta(name="description" content= HEAD_DESCRIPTION)
-    //- meta(name="robots" content="index, follow")
-    meta(name="robots" content="noindex")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    meta(name="twitter:card" content="summary_large_image")
-    meta(name="twitter:title" content= HEAD_TITLE)
-    meta(name="twitter:description" content= HEAD_DESCRIPTION)
-    meta(name="twitter:image" content= HEAD_OG_IMAGE)
-    meta(name="og:url" content="https://flexgate.ru")
-    meta(name="og:type" content="website")
-    meta(name="og:site_name" content= HEAD_OG_SITENAME)
-    meta(name="og:title" content= HEAD_TITLE)
-    meta(name="og:description" content= HEAD_DESCRIPTION)
-    meta(name="og:image" content= HEAD_OG_IMAGE)
-    meta(name="og:image:width" content="1120")
-    meta(name="og:image:height" content="584")
-    link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
-    link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
-    link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
-    meta(name="msapplication-TileColor" content="#000")
-    meta(name="theme-color" content="#000")
-    script(async defer data-website-id="bcecfb21-4e46-4946-a196-dc0f5d6f7be1" src="https://umami.internal-test.ru/umami.js")
-    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js")
+  
+  include parts/head.pug
 
   body(translate="no")
+    
     header 
       div.header_left
         a(class="track_events" href="#home")
@@ -52,7 +24,9 @@ html(lang='ru')
             a(class="track_events" href="#contacts") Контакты
       div.header_rigth
         img(src="headerdot.svg" loading="lazy" alt="Mobile Menu")
+
     main
+
       section(class="track_events" id="home")
         div(class="home_content")
           img.home_content_title(src="macbook.png" alt="Macbook Pro")
@@ -72,7 +46,7 @@ html(lang='ru')
             source(srcset='kenny_nopict.webp' type="image/webp")
             img(class="home_content_defect" src="kenny_nopict.png" id="kenny_nopict" loading="lazy" alt="Нет изображения на экране Macbook")
           div(class="home_content_info")
-            button(class="track_events bn5" id="home_buy_button" data-hystmodal="#myModal") Заказать
+            //- button(class="track_events bn5" id="home_buy_button" data-hystmodal="#myModal") Заказать
             p(class="home_content_descr active" descr="kenny_stripes") На дисплее Macbook появились полосы, в определенном положении крышки полосы пропадают
             p(class="home_content_descr" descr="kenny_flood") На экран Macbook попала жидкость, появились пятна и потеки на изображении
             p(class="home_content_descr" descr="kenny_broken") Разбился дисплей Macbook, появились трещины на экране, изображение отсутствует или искажено
@@ -100,44 +74,45 @@ html(lang='ru')
               h3 Разбита матрица
                 br
                 span Разбился дисплей Macbook, трещины на экране, изображение отсутствует или искажено
-          button(id="home_order_button" class="bn5 active") Оставить заявку
+          button(id="home_order_button" data-hystmodal="#formOrderHome") Оставить заявку
 
       section(class="track_events" id="questions")
         div(class="questions_content")
-          ul(class="questions_slider")
-            li 
+
+          ul(class="questions_slider carusel")
+            li
               img(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
               h3 У сына на экране Macbook появились полосы
                 br
                 span Все дело в шлейфах, которые находятся на сгибе дисплея. Из-за попадания крошек и групных частиц пыли шлейфа ломаются. Это распространенная проблема экрана Macbook под названием Flexgate. Мы можем заменить эти шлейфа, без замены дисплея, и вы сможете сэкономить до 30000
-            li 
+            li
               img(src="doc.png" loading="lazy" alt="Doc")
               h3 Это невозможно! Как вы это делаете?
                 br
                 span Раньше при любой поломке экрана Macbook приходилось менять дисплей с крышкой целиком - а это больше половины стоимости самого Macbook. Поэтому мы разработали технологию, и теперь мы можем производить именно ремонт дисплея Macbook, а не менять его. Это существенно сокращает стоимость и сроки
-            li 
+            li
               img(src="smegol.png" loading="lazy" alt="Smegol")
               h3 У моей прелести разбился экран, что мне теперь делать?
                 br
                 span Вместо замены дисплея целиком, мы можем заменить только матрицу Macbook. При этом все компоненты дисплея остаются родные, а значит будет работать TrueTone и подсветка клавиатуры. Вам не нужно будет ждать несколько недель, замена матрицы производится в течении одного дня
-            li 
+            li
               img(src="storm_trooper.png" loading="lazy" alt="Storm Trooper")
               h3 Сломал начальнику макбук, теперь там черный экран, помогите...
                 br
                 span При переломе шлейфа, который находится в крышке дисплея Macbook, могут появляться “волны” на подсветке, подсветка становится тусклой и неравномерной. При открытии дисплея или в разных положениях подсветка может пропадать. Нет необходимости менять экран целиком. Можно поменять отдельно шлейф подсветки на вашем Macbook в течении четырех часов
-            li 
+            li
               img(src="dimon.png" loading="lazy" alt="Dimon")
               h3 От друзей остался Macbook, у него не работает камера
                 br
                 span Скорее всего переломился шлейф, который отвечает за работу камеры на Macbook. При этом камера может периодически работать, а потом и вовсе перестать. Мы меняем шлейф камеры макбука и шлейф подсветки парой, чтобы исключить проблемы с подсветкой в дальнейшем
-            li 
+            li
               img(src="marilyn.png" loading="lazy" alt="Marilyn")
               h3 В самолете залили экран Макбука, что можно сделать?
                 br
                 span Если после попадания влаги на экран Macbook появились разводы и потеки на подсветке, значит влага попала в светорассеивающие пленки, отражатель и световод - все это можно поменять без замены дисплея в течении одного дня. В подарок вы получите полную чистку вашего Макбука внутри и снаружи
             
 
-          //- ul()
+          //- ul(class="questions_slider carusel")
           //-   li
           //-     img(src="squircle.svg" loading="lazy" alt="Question Card")
           //-     img.questions_user(src="bart_simpson.png" loading="lazy" alt="Bart Simpson")
@@ -255,27 +230,28 @@ html(lang='ru')
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li(class="track_events compare_list") Работает подсветка клавиатуры
+            li(class="compare_list") Работает подсветка клавиатуры
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li(class="track_events compare_list odd_item") Сохраняется рабочий True Tone
+            li(class="compare_list odd_item") Сохраняется рабочий True Tone
               div
                 img(src="checked.svg" loading="lazy" alt="Checked")
               div
                 img(src="unchecked.svg" loading="lazy" alt="Unchecked")
-            li(class="track_events compare_list") Время ремонта
+            li(class="compare_list") Время ремонта
               div
                 p(style="color: #1BF24B") В течении дня
               div
                 p(style="color: #EB5757") До 45 дней
-            li(class="track_events compare_list odd_item") Гарантия
+            li(class="compare_list odd_item") Гарантия
               div
                 p(style="color: #1BF24B") 6 месяцев
               div
                 p(style="color: #EB5757") -
           button(class="track_events bn5 compare_button") Заказать          
+      
       section(class="track_events" id="contacts")
         div.contacts_content
           img(src="maps.png" loading="lazy" alt="Карта города")
@@ -316,7 +292,9 @@ html(lang='ru')
             //-     button(class="sendform_button" type="submit" title="Отправляя форму, вы даете согласие на обработку своих данных") Отправить
 
         //- include parts/form.pug
-        //- include parts/modal.pug
+      
+      include parts/formOrderHome.pug
+    
     footer 
       div.footer_content
         p.footer_descript

@@ -1,0 +1,63 @@
+/* zen-tokyo-zoo-regular - latin */
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: Ultra Light;
+    font-weight: 100;
+    src:    local(''), 
+            url('./CoolveticaUl-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url('./CoolveticaUl-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: Extra Light;
+    font-weight: 200;
+    src:    local(''), 
+            url('./CoolveticaEl-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url('./CoolveticaEl-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: Light;
+    font-weight: 300;
+    src:    local(''), 
+            url('./CoolveticaLt-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url('./CoolveticaLt-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: Normal;
+    font-weight: 400;
+    src:    local(''), 
+            url('./CoolveticaBk-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url('./CoolveticaBk-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: Regular;
+    font-weight: 500;
+    src:    local(''), 
+            url('./CoolveticaRg-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url('./CoolveticaRg-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: Bold;
+    font-weight: 700;
+    src:    local(''), 
+            url('./CoolveticaRg-Bold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url('./CoolveticaRg-Bold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    font-style: Heavy;
+    font-weight: 900;
+    src:    local(''), 
+            url('./CoolveticaHv-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url('./CoolveticaHv-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

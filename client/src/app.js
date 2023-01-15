@@ -32,34 +32,57 @@ import './images/questions/marilyn.png';
 
 import './images/maps.png';
 
-// import './scripts/form.js';
 import './scripts/modal.js';
+import './scripts/form.js';
 
 
-import { tns } from '/node_modules/tiny-slider/src/tiny-slider'
 
 
-// инициализация слайдера
+// инициализация слайдера Flickity
+var Flickity = require('flickity');
 window.addEventListener('DOMContentLoaded', () => {
-  var slider = tns({
-    container: '.questions_slider',
-    items: 1,
-    slideBy: 'page',
-    // autoplay: true,
-    // gutter: 20, //Расстояние между слайдами
-    // edgePadding: 10, //Отступ снаружи
-    controlsPosition: 'bottom',
-    controlsText: ['<', '>'],
-    navAsThumbnails: true,
-    mouseDrag: true,
-    swipeAngle: false,
-    arrowKeys: true,
-    animateIn: "jello",
-    animateOut: "rollOut",
-    navPosition: 'bottom',
-    preventScrollOnTouch: 'force'
+  var elem = document.querySelector('.carusel');
+  var flkty = new Flickity( elem, {
+    cellalign: 'right',
+    // pageDots: false,
+    groupCells: '20%',
+    selectedAttraction: 0.03,
+    friction: 0.15,
+    // freeScroll: true,
+    wrapAround: true,
+    autoPlay: true
   });
 });
+
+
+
+//события нажатии кнопки заказа #HOME
+document.querySelectorAll('#home_order_button').forEach((button) => {
+  button.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // track_events home_defect_button active
+
+    document.querySelectorAll('.home_defect_button.active').forEach((defect_button_active) => {
+      let string_cont = defect_button_active.querySelector('h3').textContent;
+      let span_len = defect_button_active.querySelector('span').textContent.length;
+      let out_string = string_cont.slice(0, -(span_len));
+      console.log(out_string);
+
+      document.getElementById('inputComments').value = out_string + '  \n';
+      console.log('=>', document.getElementById('inputComments').value);
+
+     
+      
+
+    });
+
+    console.log('click home_order_button');
+
+  });
+});
+
+
 
 
 //события при выборе дефекта в #HOME
@@ -67,16 +90,16 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
   button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    function hideBorder() {
-      document.querySelector('button#home_buy_button').style.cssText =
-        'background: none; transition: background 5s linear;';
-    }
-    document.querySelector('button#home_buy_button').style.cssText =
-      'background: #EB5B00; transition: background 0.1s linear;';
-    setTimeout(hideBorder, 300);
+    // function hideBorder() {
+    //   document.querySelector('button#home_buy_button').style.cssText =
+    //     'background: none; transition: background 5s linear;';
+    // }
+    // document.querySelector('button#home_buy_button').style.cssText =
+    //   'background: #EB5B00; transition: background 0.1s linear;';
+    // setTimeout(hideBorder, 300);
 
-    document.querySelector('button#home_buy_button').classList.add('active');
-    document.querySelector('button#home_buy_button').classList.remove('active');
+    // document.querySelector('button#home_buy_button').classList.add('active');
+    // document.querySelector('button#home_buy_button').classList.remove('active');
 
     document.querySelectorAll('li.home_defect_button').forEach((defect_button) => {
       defect_button.classList.remove('active');
@@ -102,11 +125,11 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
 });
 
 //события при выборе дефекта в #COMPARE
-document.querySelectorAll('li.compare_list').forEach((item) => {
+document.querySelectorAll('li.track_events,compare_list').forEach((item) => {
   item.addEventListener('click', function (e) {
     e.preventDefault();
 
-    document.querySelectorAll('li.compare_list').forEach((select_defect) => {
+    document.querySelectorAll('li.track_events,compare_list').forEach((select_defect) => {
       select_defect.classList.remove('active');
     });
     item.classList.add('active');
