@@ -1,5 +1,4 @@
 @import form.css
-@import toggle.css
 @import button.sass
 @import flickity.css
 @import hystmodal.css
@@ -44,10 +43,12 @@ $header-height: 70px
     text-decoration: none
     // font-family: "Inter", system-ui
     // font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif
-    font-family: Coolvetica
+    font-family: coolvetica
     font-size: 16px
     color: #A8A9AE
 
+.flickity-viewport
+    // height: 900px !important
 .flickity-button
     background: transparent
     opacity: 0.3
@@ -157,6 +158,7 @@ body
         grid-area: main
         width: 100%
         margin-top: -($header-height)
+
         section
             background-color: #000
             height: 100vh
@@ -335,76 +337,88 @@ body
             grid-template-columns: 1fr
             grid-template-rows: 1fr
             align-items: center
-            // justify-items: center
+            justify-items: center
             div.questions_content
-                margin: 0 auto
-                // ul
-                //     display: grid
-                //     grid-template-columns: 1fr 1fr
-                //     grid-template-rows: 1fr 1fr 1fr
-                //     align-items: center
-                //     justify-items: center
-                //     grid-column-gap: 40px
-                //     grid-row-gap: 40px
-                //     li
-                //         position: relative
-                //         img.questions_user
-                //             position: absolute
-                //             top: 10%
-                //             left: 3%
-                //             width: 135px
-                //         h3
-                //             position: absolute
-                //             width: 60%
-                //             left: 35%
-                //             top: 7%
-                //             line-height: 15px
-                //             font-size: 13px
-                //             text-transform: uppercase
-                //             color: #000
-                //             p
-                //                 color: #000
-                //                 font-size: 13px
-                //                 margin-bottom: -11px
-                //             span
-                //                 font-size: 12px
-                //                 text-transform: none
-                //                 font-weight: 400
-                //                 color: #000
+                ul.questions_slider_mobile
+                    display: none
+                ul.questions_slider_desktop
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+                    grid-template-rows: 1fr 1fr 1fr
+                    align-items: center
+                    justify-items: center
+                    grid-column-gap: 40px
+                    grid-row-gap: 40px
+                    li
+                        display: grid
+                        grid-template-columns: 30% 70%
+                        align-items: center
+                        justify-items: center
+                        padding: 0 15px 0 0
+                        // position: relative
+                        width: 600px
+                        height: 250px
+                        box-shadow: inset 0px 0px 2px #828282
+                        border-radius: 20px
+                        img
+                            width: 120px
+                        h3
+                            font-size: 17px
+                            font-weight: 400
+                            letter-spacing: 0.8px
+                            line-height: 19px
+                            // opacity: 0.9
+                            text-transform: uppercase
+                            span
+                                font-size: 14px
+                                font-weight: 400
+                                letter-spacing: 0.9px
+                                opacity: 0.85
+                                line-height: 14px
+                                // text-transform: revert
+
+                        // img.questions_user
+                        //     position: absolute
+                        //     top: 10%
+                        //     left: 3%
+                        //     width: 135px
+                        // h3
+                        //     position: absolute
+                        //     width: 60%
+                        //     left: 35%
+                        //     top: 7%
+                        //     line-height: 15px
+                        //     font-size: 13px
+                        //     text-transform: uppercase
+                        //     color: #000
+                        //     p
+                        //         color: #000
+                        //         font-size: 16px
+                        //         font-weight: 400
+                        //         letter-spacing: 0.5px
+                        //         margin-bottom: -11px
+                        //     span
+                        //         font-size: 16px
+                        //         text-transform: none
+                        //         font-weight: 300
+                        //         letter-spacing: 0.5px
+                        //         color: #000
+                
             @media screen and (max-width: 600px)
-                // margin-top: 20%
-                // height: 20vh
-                // min-height: 80vh
                 div.questions_content
                     width: 350px
-                    // height: 100%
-                    ul.questions_slider
+                    ul.questions_slider_desktop
+                        display: none
+                    ul.questions_slider_mobile
+                        display: block
                         width: 100%
-                        // display: flex
-                        // margin-left: -45px;
                         li
-                            // display: block
-                            // border: 0.5px solid #828282
                             // background: rgba(19, 19, 24, 0.3)
-                            // background: #131318
                             border-radius: 20px
                             height: 500px
-                            // padding: 10px;
-                            // border: 1px solid #828282
                             margin: 0 15px
                             padding: 10px 35px
                             box-shadow: inset 0px 0px 1px #828282
-
-                            // float: right;
-                            // max-width: 201px;
-                            // width: 100%;
-                            // height: 335px;
-                            // border-radius: 15px;
-                            // counter-increment: carousel-cell;
-
-
-
-
                             img
                                 display: block
                                 margin: 0 auto
@@ -418,21 +432,14 @@ body
                                 line-height: 18px
                                 letter-spacing: 0.5px;
                                 text-transform: uppercase
-                                // color: #fff
                                 opacity: 0.9
                                 span
                                     display: block
                                     margin-top: 16px
-                                    // font-size: 14px;
-                                    // font-weight: 400;
-                                    // line-height: 18px
-                                    // text-transform: initial;
-                                    // color: #8e8e8e
-                                    font-weight: 300;
-                                    // line-height: 95%;
-                                    text-transform: initial;
-                                    letter-spacing: 0.5px;
-                                    opacity: 0.6;
+                                    font-weight: 300
+                                    text-transform: initial
+                                    letter-spacing: 0.5px
+                                    opacity: 0.6
 
         section#compare
             display: grid

@@ -1,18 +1,44 @@
-//- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 div(class="container contact-us-section")
   div(class="section-title")
-    h2 Остались вопросы
-      span Напишите нам
-  form(accept="javascript:void(0)" method="POST" action="javascript:void(0)" class="contact-us-form")
+    //- h2 Оставить заявку
+    span Оставить заявку
+  form(accept="javascript:void(0)" method="POST" action="javascript:void(0)" class="contact-us-form" id="telegram_form")
     div(class="form-group")
-      label(for="inputName") Имя : *
-      input(placeholder="ваше имя" type="text" required id="inputName" name="name")
+      label(for="inputUserName") Имя : *
+      input(placeholder="ваше имя" type="text" required id="inputUserName" name="inputUserName")
     div(class="form-group")
-      label(for="inputEmailAddress") Телефон : *
-      input(placeholder="номер телефона" type="tel" required id="inputTelephoneNumber" name="telephoneNumber")
+      label(for="inputTelephoneNumber") Телефон : *
+      input(placeholder="номер телефона" type="tel" required id="inputTelephoneNumber" name="inputTelephoneNumber")
     div(class="form-group")
-      label(for="inputComment") Сообщение :
-      textarea(placeholder="сообщение" required id="inputComment" rows="2" name="inputMessage")
+      label(for="inputModelMacbook") Модель Macbook : 
+      input(placeholder="введите модель Macbook, например A2337" type="text" required list="inputModelMacbook" name="inputModelMacbook")
+      datalist(id="modelMacbook")
+          option(value='Macbook Air 13" A1932 2018-2019') Macbook Air 13" A1932 2018-2019
+          option(value='Macbook Air 13" A2179 2020') Macbook Air 13" A2179 2020
+          option(value='Macbook Air 13" A2337 2020-2021 M1') Macbook Air 13" A2337 2020-2021 M1
+          option(value='Macbook Air 13" A2681 2022') Macbook Air 13" A2681 2022
+          option(value='Macbook Pro 13" A1706 2016-2017') Macbook Pro 13" A1706 2016-2017
+          option(value='Macbook Pro 13" A1708 2016-2017') Macbook Pro 13" A1708 2016-2017
+          option(value='Macbook Pro 13" A1989 2018-2019') Macbook Pro 13" A1989 2018-2019
+          option(value='Macbook Pro 13" A2159 2019-2020') Macbook Pro 13" A2159 2019-2020
+          option(value='Macbook Pro 13" A2289 2019') Macbook Pro 13" A2289 2019
+          option(value='Macbook Pro 13" A2251 2020') Macbook Pro 13" A2251 2020
+          option(value='Macbook Pro 13" A2338 2020 M1') Macbook Pro 13" A2338 2020 M1
+          option(value='Macbook Pro 13" A2338 2022 M2') Macbook Pro 13" A2338 2022 M2
+          option(value='Macbook Pro 14" A2442 2021 M1') Macbook Pro 14" A2442 2021 M1
+          option(value='Macbook Pro 15" A1707 2016-2017') Macbook Pro 15" A1707 2016-2017
+          option(value='Macbook Pro 15" A1990 2018-2019') Macbook Pro 15" A1990 2018-2019
+          option(value='Macbook Pro 16" A2141 2019') Macbook Pro 16" A2141 2019
+          option(value='Macbook Pro 16" A2485 2021 M1') Macbook Pro 16" A2485 2021 M1
+    div(class="form-group")
+      label(for="inputComments") Неисправность :
+      textarea(placeholder="сообщение" required id="inputComments" rows="2" name="inputComments")
+    div(class="toggleWrapper")
+      p Перезвоните мне
+      input(type="checkbox" name="callbackToggle" class="mobileToggle" id="callbackToggle")
+      label(for="callbackToggle")
     div(class="form-group clearfix")
       button(data-id="#accessories-holder" class="red-select-btn model-selector btn-send-message")
-        span Отправить
+        span Отправить 
+  div(class="consent")
+    p Отправляя заявку, Вы даете согласие на обработку своих данных

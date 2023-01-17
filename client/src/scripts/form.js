@@ -4,8 +4,6 @@ import swal from 'sweetalert';
 const form = document.getElementById('telegram_form');
 const closeModal = document.querySelector('.hystmodal__close');
 
-console.log(form);
-
 const sendData = async (data) => {
   try {
     await axiosInstance.post('/sendForm', data);
@@ -29,12 +27,13 @@ const sendData = async (data) => {
 const onSubmitForm = function (e) {
   e.preventDefault();
   const data = {
-    name: this.name.value,
-    tel: this.phone.value,
-    model: this.model.value,
-    comment: this.description.value,
-    checked: this.feedback.checked,
+    name: this.inputUserName.value,
+    tel: this.inputTelephoneNumber.value,
+    model: this.inputModelMacbook.value,
+    comment: this.inputComments.value.replace(/\r?\n/g, ""),
+    checked: this.callbackToggle.checked,
   };
+  console.log(data);
   sendData(data);
 };
 

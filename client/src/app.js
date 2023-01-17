@@ -41,7 +41,7 @@ import './scripts/form.js';
 // инициализация слайдера Flickity
 var Flickity = require('flickity');
 window.addEventListener('DOMContentLoaded', () => {
-  var elem = document.querySelector('.carusel');
+  var elem = document.querySelector('.questions_slider_mobile');
   var flkty = new Flickity( elem, {
     cellalign: 'right',
     // pageDots: false,
@@ -50,37 +50,55 @@ window.addEventListener('DOMContentLoaded', () => {
     friction: 0.15,
     // freeScroll: true,
     wrapAround: true,
-    autoPlay: true
+    // autoPlay: true
   });
 });
 
+console.log('screen.width -->', screen.width, 'screen.height -->', screen.height);
 
 
-//события нажатии кнопки заказа #HOME
+
+
+
+//события нажатии кнопки заказа в SECTION#HOME
 document.querySelectorAll('#home_order_button').forEach((button) => {
   button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    // track_events home_defect_button active
-
+    // вставляет выбранный дефект в форму
     document.querySelectorAll('.home_defect_button.active').forEach((defect_button_active) => {
-      let string_cont = defect_button_active.querySelector('h3').textContent;
+      let string_content = defect_button_active.querySelector('h3').textContent;
       let span_len = defect_button_active.querySelector('span').textContent.length;
-      let out_string = string_cont.slice(0, -(span_len));
-      console.log(out_string);
-
-      document.getElementById('inputComments').value = out_string + '  \n';
-      console.log('=>', document.getElementById('inputComments').value);
-
-     
-      
-
+      let out_string = string_content.slice(0, -(span_len));
+      // console.log(out_string);
+      document.getElementById('inputComments').value = out_string + '\n';
     });
 
-    console.log('click home_order_button');
-
+    // получает значение toggle
+    // let callback_toggle = document.getElementById('callbackToggle');
+    // callback_toggle.addEventListener('click', function(e) {
+    //   console.log(callback_toggle.checked);
+    // });
   });
 });
+
+
+
+
+
+
+//события нажатии кнопки заказа в SECTION#COMPARE
+document.getElementById('compare_order_button').addEventListener('click', function(e) {
+
+  // вставляет выбранный дефект в форму
+  document.querySelectorAll('.compare_list.active').forEach((compare_list_active) => {
+    let string_content = compare_list_active.textContent.replace(/\r?\n/g, "");
+    // console.log(string_content);
+    document.getElementById('inputComments').value = string_content + '\n';
+  });
+});
+
+
 
 
 
@@ -90,36 +108,18 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
   button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    // function hideBorder() {
-    //   document.querySelector('button#home_buy_button').style.cssText =
-    //     'background: none; transition: background 5s linear;';
-    // }
-    // document.querySelector('button#home_buy_button').style.cssText =
-    //   'background: #EB5B00; transition: background 0.1s linear;';
-    // setTimeout(hideBorder, 300);
-
-    // document.querySelector('button#home_buy_button').classList.add('active');
-    // document.querySelector('button#home_buy_button').classList.remove('active');
-
-    document.querySelectorAll('li.home_defect_button').forEach((defect_button) => {
-      defect_button.classList.remove('active');
-    });
-    button.classList.add('active');
-
     document.querySelectorAll('img.home_content_defect').forEach((image) => {
       image.classList.remove('active');
     });
+
     let defect = this.getAttribute('defect');
     document.getElementById(defect).classList.add('active');
 
     document.querySelectorAll('p.home_content_descr').forEach((description) => {
       description.classList.remove('active');
     });
-    document.querySelector(`[descr='${defect}']`).classList.add('active');
 
-    
-    document.querySelector("#home_order_button").classList.remove('active');
-    setTimeout(() => {document.querySelector("#home_order_button").classList.add('active')}, 200)
+    document.querySelector(`[descr='${defect}']`).classList.add('active');
 
   });
 });
@@ -185,7 +185,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   setTimeout(
     document.querySelectorAll('.track_events').forEach((item) => {
       item.addEventListener('click', function (e) {
-        e.preventDefault();
+        // e.preventDefault();
         if (item.tagName == 'LI') {
           trackEvents += item.textContent.replace(/\r?\n/g, '').replace(/^ +| +$|( ) +/g, '$1');
         }
