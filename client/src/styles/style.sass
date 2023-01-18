@@ -134,8 +134,9 @@ body
                 grid-row-gap: 0px
                 li
                     a
-                        font-size: 12px
+                        font-size: 14px
                         text-transform: uppercase
+                        letter-spacing: 0.9px
         div.header_rigth
             cursor: pointer
             img
@@ -198,15 +199,15 @@ body
                     height: 32px
                     margin-top: -208px
                     overflow: hidden
-                    button
-                        height: 25px
-                        margin-left: 14px
-                        border-radius: 5px
-                        background: #1D1E22
-                        font-size: 11px
-                        text-transform: uppercase
-                        z-index: 1
-                        color: #EB5B00
+                    // button
+                    //     height: 25px
+                    //     margin-left: 14px
+                    //     border-radius: 5px
+                    //     background: #1D1E22
+                    //     font-size: 11px
+                    //     text-transform: uppercase
+                    //     z-index: 1
+                    //     color: #EB5B00
                     button.active
                         border: solid 1px #ED5900
                     p.home_content_descr
@@ -249,11 +250,34 @@ body
                         margin: 0px 7px
                         cursor: pointer
                         transition: 0.15s linear
-                        // border: solid #414450 1px
+                        h3
+                            font-size: 14px
+                            font-weight: 400
+                            letter-spacing: 0.3px
+                            span
+                                display: none
+                            
                         &:hover
-                        //    filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
+                           filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
+                            // opacity: 1
                     li.active
-                        filter: drop-shadow(0px 0px 1px rgba(238, 90, 0, 0.75))
+                        filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
+                button
+                    width: 80%;
+                    height: 50px;
+                    margin-top: 30px;
+                    background: #131318;
+                    border-radius: 11px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    letter-spacing: 0.4px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    opacity: 0.9;
+                    color: #d35000d4
+                    // background: rgba(20, 20, 20, 0.9);
+                    &:hover
+                        opacity: 1
             @media screen and (max-width: 600px)
                 // padding-top: 30%
                 padding-top: $header-height
@@ -356,25 +380,26 @@ body
                         justify-items: center
                         padding: 0 15px 0 0
                         // position: relative
-                        width: 600px
-                        height: 250px
-                        box-shadow: inset 0px 0px 2px #828282
+                        width: 520px
+                        height: 180px
+                        // box-shadow: inset 0px 0px 2px #828282
                         border-radius: 20px
+                        background: rgba(20, 20, 20, 0.9)
                         img
                             width: 120px
                         h3
-                            font-size: 17px
-                            font-weight: 400
+                            font-size: 14px
+                            font-weight: 500
                             letter-spacing: 0.8px
-                            line-height: 19px
+                            line-height: 15px
                             // opacity: 0.9
                             text-transform: uppercase
                             span
-                                font-size: 14px
-                                font-weight: 400
-                                letter-spacing: 0.9px
+                                font-size: 12px
+                                font-weight: 300
+                                letter-spacing: 1px
                                 opacity: 0.85
-                                line-height: 14px
+                                // line-height: 14px
                                 // text-transform: revert
 
                         // img.questions_user
@@ -464,6 +489,8 @@ body
                         padding-left: 30px
                         padding-right: 50px
                         cursor: pointer
+                        letter-spacing: 0.9px
+                        opacity: 0.9
                         &:hover
                             // color: #EE5A00
                             font-size: 15px
@@ -486,6 +513,7 @@ body
                         height: 55px
                         background: linear-gradient(180deg, #3F3F3E 0%, #2C2C2C 100%)
                         text-align: center
+                        // font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif !important
                     li.compare_list.subtitle
                         height: 88px
                         background: linear-gradient(180deg, #333333 0%, #202020 100%)
@@ -517,17 +545,31 @@ body
                     li.compare_list.odd_item
                         background: #333333
                 button.compare_button
-                    margin-top: 35px
-                    margin-left: 65px
-                    width: 162px
-                    height: 40px
-                    background: #363636
-                    border-radius: 10px
-                    text-transform: uppercase
-                    cursor: pointer
-                    letter-spacing: 0.9px
-                    opacity: 0.9
-                    color: #A8A9AE
+                    // margin-top: 35px
+                    // margin-left: 65px
+                    // width: 162px
+                    // height: 40px
+                    // background: #363636
+                    // border-radius: 10px
+                    // text-transform: uppercase
+                    // cursor: pointer
+                    // letter-spacing: 0.9px
+                    // opacity: 0.9
+                    // color: #d35000d4
+                    width: 80%;
+                    height: 50px;
+                    margin-top: 30px;
+                    background: #131318;
+                    border-radius: 11px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    letter-spacing: 0.4px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    opacity: 0.9;
+                    color: #d35000d4;
+                    &:hover
+                        opacity: 1
                 button.bn5:before
                     opacity: 0 // чтобы кнопочка светилась
             @media screen and (max-width: 600px)
