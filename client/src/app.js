@@ -3,17 +3,12 @@ import './styles/style.sass';
 import './images/icons/favicon/apple-touch-icon.png';
 import './images/icons/favicon/favicon-32x32.png';
 import './images/icons/favicon/favicon-16x16.png';
-
-import './images/icons/headerdot.svg';
-import './images/icons/checked.svg';
-import './images/icons/unchecked.svg';
-// import './images/icons/telegram.svg';
-// import './images/icons/instagram.svg';
-import './images/icons/telegram-icon.svg';
 import './images/icons/instagram-icon.svg';
+import './images/icons/telegram-icon.svg';
 import './images/icons/whatsapp-icon.svg';
-
-
+import './images/icons/headerdot.svg';
+import './images/icons/unchecked.svg';
+import './images/icons/checked.svg';
 
 import './images/home/macbook.png';
 import './images/home/kenny_stripes.png';
@@ -36,20 +31,48 @@ import './images/questions/dimon.png';
 import './images/questions/marilyn.png';
 
 import './images/maps.png';
+// import './images/hand-macbook.jpg'
 
 import './scripts/modal.js';
-import './scripts/form.js';
+import './scripts/form_modal.js';
+import './scripts/form_footer.js';
 
 
 
-if (document.location.host == 'localhost:3003') {
-  window.addEventListener('DOMContentLoaded', () => {
-    let head = document.querySelector('head');
-    console.log('document.location.host --->', document.location.host);
-    console.log('head --->', head);
-    // head.append('include parts/modal.pug')
-  });
-}
+
+// метрика
+const UMAMI_WEBSITE_ID = '1234567890';
+const UMAMI_WEBSITE_URL = 'http://;;;;;.ru'
+const METRIKA_YANDEX = `
+                          (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                          m[i].l=1*new Date();
+                          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                          (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                          ym(92109992, "init", {
+                               clickmap:true,
+                               trackLinks:true,
+                               accurateTrackBounce:true
+                          });
+                      `;
+
+// console.log('document.location.host --->', document.location.host);
+
+window.addEventListener('DOMContentLoaded', () => {
+  let metrika_umami = document.querySelector('.metrika_umami');
+  let metrika_yandex = document.querySelector('.metrika_yandex');
+  let robots = document.head.querySelector('meta[name="robots"]');
+  if (document.location.host == 'flexgate.ru') {
+    metrika_yandex.append(METRIKA_YANDEX);
+    robots.setAttribute('content', 'index, follow');
+    metrika_umami.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
+    metrika_umami.setAttribute('src', UMAMI_WEBSITE_URL);
+  }
+});
+
+
+
 
 // инициализация слайдера Flickity
 var Flickity = require('flickity');
@@ -90,9 +113,6 @@ document.querySelectorAll('#home_order_button').forEach((button) => {
 
 
 
-
-
-
 //события нажатии кнопки заказа в SECTION#COMPARE
 document.getElementById('compare_order_button').addEventListener('click', function(e) {
 
@@ -128,6 +148,9 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
 
   });
 });
+
+
+
 
 //события при выборе дефекта в #COMPARE
 document.querySelectorAll('li.track_events,compare_list').forEach((item) => {

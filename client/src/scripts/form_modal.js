@@ -25,6 +25,7 @@ const sendData = async (data) => {
 };
 
 const onSubmitForm = function (e) {
+  console.log('errr');
   e.preventDefault();
   const data = {
     name: this.inputUserName.value,

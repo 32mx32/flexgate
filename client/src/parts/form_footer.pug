@@ -2,7 +2,7 @@ div(class="container contact-us-section")
   div(class="section-title")
     //- h2 Оставить заявку
     span Оставить заявку
-  form(accept="javascript:void(0)" method="POST" action="javascript:void(0)" class="contact-us-form" id="telegram_form")
+  form(accept="javascript:void(0)" method="POST" action="javascript:void(0)" class="contact-us-form" id="telegram_form_footer")
     div(class="form-group")
       label(for="inputUserName") Имя : *
       input(placeholder="ваше имя" type="text" required id="inputUserName" name="inputUserName")
@@ -32,11 +32,11 @@ div(class="container contact-us-section")
           option(value='Macbook Pro 16" A2485 2021 M1') Macbook Pro 16" A2485 2021 M1
     div(class="form-group")
       label(for="inputComments") Неисправность :
-      textarea(placeholder="сообщение" required id="inputComments" rows="2" name="inputComments")
+      textarea(placeholder="сообщение" required id="_inputComments" rows="2" name="inputComments")
     div(class="toggleWrapper")
       p Перезвоните мне
-      input(type="checkbox" name="callbackToggle" class="mobileToggle" id="callbackToggle")
-      label(for="callbackToggle")
+      input(type="checkbox" name="callbackToggleFooter" class="mobileToggle" id="callbackToggleFooter")
+      label(for="callbackToggleFooter")
     div(class="form-group clearfix")
       button(data-id="#accessories-holder" class="red-select-btn model-selector btn-send-message")
         span Отправить 
