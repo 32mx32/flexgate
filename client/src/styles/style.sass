@@ -263,7 +263,7 @@ body
                     li.active
                         filter: drop-shadow(0px 0px 5px rgba(238, 90, 0, 0.75))
                 button
-                    width: 80%;
+                    width: 300px
                     height: 50px;
                     margin-top: 30px;
                     background: #131318;
@@ -556,18 +556,18 @@ body
                     // letter-spacing: 0.9px
                     // opacity: 0.9
                     // color: #d35000d4
-                    width: 80%;
-                    height: 50px;
-                    margin-top: 30px;
-                    background: #131318;
-                    border-radius: 11px;
-                    font-size: 16px;
-                    font-weight: 400;
-                    letter-spacing: 0.4px;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    opacity: 0.9;
-                    color: #d35000d4;
+                    width: 300px
+                    height: 50px
+                    margin-top: 30px
+                    background: #131318
+                    border-radius: 11px
+                    font-size: 16px
+                    font-weight: 400
+                    letter-spacing: 0.4px
+                    text-transform: uppercase
+                    cursor: pointer
+                    opacity: 0.9
+                    color: #d35000d4
                     &:hover
                         opacity: 1
                 button.bn5:before
@@ -636,60 +636,90 @@ body
             display: grid
             align-items: center
             justify-items: center
+            padding: 0 15%
             div.contacts_content
-                position: relative
+                position: absolute
                 display: grid
                 align-items: center
                 justify-items: center
                 width: 1063px
                 height: 367px
-                img
-                    width: 100%
-                div.contacts_block
+                .working_mode
                     position: absolute
-                    display: grid
-                    align-items: center
-                    grid-template-columns: 50% 50%
-                    right: 70px
-                    height: 100%
-                    width: 500px
-                    background-color: rgba(0, 0, 0, 0.5)
-                    ul.contacts_list
+                    z-index: 10
+                    background: white
+                    background: rgba(255, 255, 255, 0.6)
+                    height: 85%
+                    width: 212px
+                    top: 8px
+                    left: 10px
+                    border-radius: 20px
+                    padding: 15px 30px
+                    p
+                        margin-top: 15px
+                        color: #000
+                        span
+                            color: #000
+                            opacity: 0.8
+                            font-size: 18px
+                            font-weight: 300
+                    a.contacts_tel
+                        display: block
+                        margin-top: 30px
+                        color: #000
+                        font-size: 20px
+                        font-weight: 300
+                    ul.contacts_social
+                        display: grid
+                        grid-template-columns: 30% 30% 30%
+                        align-items: center
+                        justify-items: center
+                        margin-top: 20px
                         li
-                            margin: 20px 50px
-                            p
-                                // margin: 20px 50px
-                                font-size: 11px
-                                color: #828282
-                                line-height: 18px
-                        li.contacts_tel
-                            padding: 20px 0px 10px 0
+                            margin: 0 10px
                             a
-                                font-size: 18px
-                        li.contacts_social
-                            display: grid
-                            grid-template-columns: 25% 25%
-                            img
-                                cursor: pointer
-            @media screen and (max-width: 600px)
-                div.contacts_content
-                    width: 300px
+                                img
+                                    transition: 0.3s
+                                    &:hover
+                                        transform: scale(1.2)
+                iframe
+                    position: relative
+                    width: 100%
                     height: 100%
-                    img
-                        display: none
-                    div.contacts_block
-                        grid-template-columns: 100%
-                        grid-template-rows: 50% 30%
-                        grid-template-areas: "a" "b"
-                        // gap: 10% 0%;
-                        right: 0
-                        width: 100%
-                        ul.contacts_list
-                            grid-area: b
-                            // display: none
-                        div.contacts_form
-                            grid-area: a
-                            // width: 300px
+                    border-radius: 30px
+            @media screen and (max-width: 600px)
+                padding: 0
+                align-content: center
+                justify-items: center
+                height: 400px
+                min-height: 400px
+                div.contacts_content
+                    margin: 0 auto
+                    width: 99%
+                    height: 300px
+                    div.working_mode
+                        padding: 0
+                        padding: 0 0 0 10px
+                        width: 150px
+                        height: 75%
+                        margin-top: 10px
+                        p
+                            margin-top: 0px
+                            font-size: 12px
+                            span
+                                font-size: 14px
+                                font-weight: 400
+                        a.contacts_tel
+                            margin-top: 15px
+                            font-size: 16px
+                        ul.contacts_social
+                            margin-top: 15px
+                            margin-left: -10px
+                            li
+                                a
+                                    img
+                                        width: 25px
+                                        height: 25px
 
     footer
         grid-area: footer

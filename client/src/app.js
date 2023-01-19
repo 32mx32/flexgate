@@ -7,8 +7,13 @@ import './images/icons/favicon/favicon-16x16.png';
 import './images/icons/headerdot.svg';
 import './images/icons/checked.svg';
 import './images/icons/unchecked.svg';
-import './images/icons/telegram.svg';
-import './images/icons/instagram.svg';
+// import './images/icons/telegram.svg';
+// import './images/icons/instagram.svg';
+import './images/icons/telegram-icon.svg';
+import './images/icons/instagram-icon.svg';
+import './images/icons/whatsapp-icon.svg';
+
+
 
 import './images/home/macbook.png';
 import './images/home/kenny_stripes.png';
@@ -37,6 +42,14 @@ import './scripts/form.js';
 
 
 
+if (document.location.host == 'localhost:3003') {
+  window.addEventListener('DOMContentLoaded', () => {
+    let head = document.querySelector('head');
+    console.log('document.location.host --->', document.location.host);
+    console.log('head --->', head);
+    // head.append('include parts/modal.pug')
+  });
+}
 
 // инициализация слайдера Flickity
 var Flickity = require('flickity');
@@ -63,22 +76,15 @@ console.log('screen.width -->', screen.width, 'screen.height -->', screen.height
 //события нажатии кнопки заказа в SECTION#HOME
 document.querySelectorAll('#home_order_button').forEach((button) => {
   button.addEventListener('click', function (e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     // вставляет выбранный дефект в форму
     document.querySelectorAll('.home_defect_button.active').forEach((defect_button_active) => {
       let string_content = defect_button_active.querySelector('h3').textContent;
       let span_len = defect_button_active.querySelector('span').textContent.length;
       let out_string = string_content.slice(0, -(span_len));
-      // console.log(out_string);
       document.getElementById('inputComments').value = out_string + '\n';
     });
-
-    // получает значение toggle
-    // let callback_toggle = document.getElementById('callbackToggle');
-    // callback_toggle.addEventListener('click', function(e) {
-    //   console.log(callback_toggle.checked);
-    // });
   });
 });
 
@@ -93,7 +99,6 @@ document.getElementById('compare_order_button').addEventListener('click', functi
   // вставляет выбранный дефект в форму
   document.querySelectorAll('.compare_list.active').forEach((compare_list_active) => {
     let string_content = compare_list_active.textContent.replace(/\r?\n/g, "");
-    // console.log(string_content);
     document.getElementById('inputComments').value = string_content + '\n';
   });
 });
@@ -106,7 +111,7 @@ document.getElementById('compare_order_button').addEventListener('click', functi
 //события при выборе дефекта в #HOME
 document.querySelectorAll('li.home_defect_button').forEach((button) => {
   button.addEventListener('click', function (e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     document.querySelectorAll('img.home_content_defect').forEach((image) => {
       image.classList.remove('active');
@@ -127,7 +132,7 @@ document.querySelectorAll('li.home_defect_button').forEach((button) => {
 //события при выборе дефекта в #COMPARE
 document.querySelectorAll('li.track_events,compare_list').forEach((item) => {
   item.addEventListener('click', function (e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     document.querySelectorAll('li.track_events,compare_list').forEach((select_defect) => {
       select_defect.classList.remove('active');

@@ -253,28 +253,57 @@ html(lang='ru')
       
       section(class="track_events" id="contacts")
         div.contacts_content
-          img(src="maps.png" loading="lazy" alt="Карта города")
-          div.contacts_block
-            ul.contacts_list
-              li
-                p 
-                  | Адрес
-                  br
-                  span Ростов-на-Дону
-                  br
-                  span ул.Пушкинская 100
-              li
-                p
-                  | Часы работы
-                  br
-                  span Пн-Сб 10.00-20.00
-                  br
-                  span Вс Выходной
-              li.contacts_tel
-                a(class="track_events" href="tel: +79996963434") +7 999 696 34 34
-              li.contacts_social
-                img(src="telegram.svg" width="20px" height="20px" loading="lazy" alt="Telegram")
-                img(src="instagram.svg" width="20px" height="20px" loading="lazy" alt="Instagram")
+          div(class="working_mode")
+            p 
+              | Адрес
+              br
+              span Ростов-на-Дону
+              br
+              span Пушкинская 100
+            p 
+              | Часы работы
+              br
+              span Пн-Сб - 10.00 - 20.00
+              br
+              span Вс - Выходной
+            a(class="track_events contacts_tel" href="tel: +79996963434") +7 999 696 34 34
+            ul(class="contacts_social")
+              //- img(src="telegram.svg" width="20px" height="20px" loading="lazy" alt="Telegram" data-title="Telegram")
+              //- img(src="instagram.svg" width="20px" height="20px" loading="lazy" alt="Instagram" data-title="Instagram")
+              li 
+                a(class="telegram-link" href="tg://resolve?domain=mymac_rostov" target="_blank" rel="noreferrer noopener")
+                  img(src="telegram-icon.svg" width="25px" height="25px" loading="lazy" alt="Написать сообщение в Telegram" data-title="Telegram")
+              li 
+                a(class="instagram-link" href="https://www.instagram.com/mymac.center/" target="_blank" rel="noreferrer noopener")
+                  img(src="instagram-icon.svg" width="29px" height="29px" loading="lazy" alt="Написать сообщение в Instagram" data-title="Instagram")
+              li 
+                a(class="whatsapp-link" href="https://wa.me/79996963434?text=Здравствуйте!%20У%20меня%20есть%20вопрос -%20" target="_blank" rel="noreferrer noopener" data-title="Whatsapp")
+                  img(src="whatsapp-icon.svg" width="25px" height="25px" loading="lazy" alt="Написать сообщение в Instagram")
+
+          include parts/maps.pug
+
+          //- img(src="maps.png" loading="lazy" alt="Карта города")
+          //- div.contacts_block
+          //-   ul.contacts_list
+          //-     li
+          //-       p 
+          //-         | Адрес
+          //-         br
+          //-         span Ростов-на-Дону
+          //-         br
+          //-         span ул.Пушкинская 100
+          //-     li
+          //-       p
+          //-         | Часы работы
+          //-         br
+          //-         span Пн-Сб 10.00-20.00
+          //-         br
+          //-         span Вс Выходной
+          //-     li.contacts_tel
+          //-       a(class="track_events" href="tel: +79996963434") +7 999 696 34 34
+          //-     li.contacts_social
+          //-       img(src="telegram.svg" width="20px" height="20px" loading="lazy" alt="Telegram")
+          //-       img(src="instagram.svg" width="20px" height="20px" loading="lazy" alt="Instagram")
 
             //- include parts/form.pug
             //- div.contacts_form
@@ -290,7 +319,9 @@ html(lang='ru')
             //-       input(type="text" name="message" placeholder="Сообщение" maxlength="80" required="")
             //-       //- label Сообщение
             //-     button(class="sendform_button" type="submit" title="Отправляя форму, вы даете согласие на обработку своих данных") Отправить
-      //- include parts/form.pug
+
+        //- include parts/maps.pug  
+
       include parts/modal.pug
     
     footer 
