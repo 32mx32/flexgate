@@ -10,10 +10,12 @@
 }
 .contact-us-section h2 {
   /* color: #EB5757; */
-  color: #ee5a00;
+  /* color: #ee5a00; */
+  color: #fff;
   text-transform: uppercase;
   font-weight: bold;
   opacity: 80%;
+  margin-bottom: -20px;
 }
 .contact-us-section span {
   display: block;
@@ -26,10 +28,16 @@
 }
 .contact-us-section .section-title {
   /* background-color: rgba(255,255,255,0.1); */
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: relative; */
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.contact-us-section .section-title span {
+  margin-top: 20px;
 }
 /* .contact-us-section .section-title:before{
     height: 26px;
@@ -145,7 +153,7 @@ button.btn-send-message span {
 }
 
 div.consent {
-  margin: 30px auto;
+  margin: 10px auto;
   width: 100%;
 }
 div.consent p {

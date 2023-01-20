@@ -41,8 +41,8 @@ import './scripts/form_footer.js';
 
 
 // метрика
-const UMAMI_WEBSITE_ID = '1234567890';
-const UMAMI_WEBSITE_URL = 'http://;;;;;.ru'
+const UMAMI_WEBSITE_ID = '1850ba22-b36b-492c-874b-d457556be6c8';
+const UMAMI_WEBSITE_URL = 'https://umami.flexgate.ru/umami.js'
 const METRIKA_YANDEX = `
                           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
                           m[i].l=1*new Date();
@@ -86,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
     friction: 0.15,
     // freeScroll: true,
     wrapAround: true,
-    // autoPlay: true
+    autoPlay: true
   });
 });
 
