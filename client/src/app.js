@@ -90,7 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-console.log('screen.width -->', screen.width, 'screen.height -->', screen.height);
+// console.log('screen.width -->', screen.width, 'screen.height -->', screen.height);
 
 
 
