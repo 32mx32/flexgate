@@ -11,7 +11,7 @@ const getMessage = ({ name, tel, model, comment, checked }) => `
 <b>Телефон: </b> ${tel}
 <b>Модель: </b> ${model}
 <b>Коммент: </b> ${comment}
-${checked ? '\n* ПЕРЕЗВОНИТЬ *\n' : ''}
+<b>Перезвонить: </b>${checked ? '\n* ПЕРЕЗВОНИТЬ КЛИЕНТУ*\n' : 'НЕТ'}
 `;
 
 export const sendMessageToBot = async (req, res) => {
