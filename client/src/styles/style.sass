@@ -47,16 +47,10 @@ $header-height: 70px
     font-size: 16px
     color: #A8A9AE
 
-.flickity-viewport
-    // height: 900px !important
+
 .flickity-button
     background: transparent
     opacity: 0.3
-// .flickity-prev-next-button
-//     width: 100px
-//     height: 100px
-// button.flickity-button.previous
-//     left: 0px
 .flickity-prev-next-button.previous
     left: -30px
 .flickity-prev-next-button.next
@@ -138,6 +132,7 @@ body
                         text-transform: uppercase
                         letter-spacing: 0.9px
         div.header_rigth
+            display: none
             cursor: pointer
             img
                 width: 20px
@@ -700,10 +695,17 @@ body
                 padding: 0
                 align-content: center
                 justify-items: center
-                height: 400px
-                min-height: 400px
+                // height: 400px
+                // min-height: 400px
+                grid-template-rows: 50% 50%
+                margin-top: 40px
+                margin-bottom: 0
+                height: 120vh
+                div.contacts_form
+                    width: 100%
                 div.contacts_content
                     margin: 0 auto
+                    margin-top: 90px
                     width: 99%
                     height: 300px
                     div.working_mode
@@ -734,10 +736,12 @@ body
         grid-area: footer
         width: 1030px
         @media screen and (max-width: 600px)
-            display: none
+            // display: none
+            width: 95%
+            padding: 10px 0
         div.footer_content
             display: grid
-            grid-template-rows: 1fr 1fr
+            grid-template-rows: 90% 10%
             align-items: center
             justify-items: center
             p.footer_descript
@@ -745,6 +749,7 @@ body
                 color: #828282
                 text-align: center
             p.footer_copyright
+                margin-top: 5px
                 font-size: 12px
                 // color: #4F4F4F
                 span
