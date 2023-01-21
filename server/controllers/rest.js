@@ -7,11 +7,11 @@ const token = process.env.TELEGRAM_TOKEN;
 
 const getMessage = ({ name, tel, model, comment, checked }) => `
 <b>Заказ с сайта Flexgate.ru</b>\n
-<b>name</b> ${name}\n
-<b>tel</b> ${tel}\n
-<b>model</b> ${model}\n
-<b>comment</b> ${comment}\n
-${checked ? '\n*ПЕРЕЗВОНИТЬ*\n' : ''}
+<b>Имя: </b> ${name}
+<b>Телефон: </b> ${tel}
+<b>Модель: </b> ${model}
+<b>Коммент: </b> ${comment}
+${checked ? '\n* ПЕРЕЗВОНИТЬ *\n' : ''}
 `;
 
 export const sendMessageToBot = async (req, res) => {
