@@ -14,7 +14,7 @@ const sendData = async (data) => {
     });
     form.reset();
     closeModal?.click();
-    console.log(data);
+    // console.log(data);
   } catch (error) {
     swal({
       title: 'Произошла ошибка!',
@@ -25,7 +25,7 @@ const sendData = async (data) => {
 };
 
 const onSubmitForm = function (e) {
-  console.log('errr');
+  // console.log('errr');
   e.preventDefault();
   const data = {
     name: this.inputUserName.value,
@@ -34,7 +34,7 @@ const onSubmitForm = function (e) {
     comment: this.inputComments.value.replace(/\r?\n/g, ""),
     checked: this.callbackToggle.checked,
   };
-  console.log(data);
+  // console.log(data);
   sendData(data);
 };
 
