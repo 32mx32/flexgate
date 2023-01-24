@@ -31,7 +31,7 @@ import './images/questions/dimon.png';
 import './images/questions/marilyn.png';
 
 import './images/maps.png';
-// import './images/hand-macbook.jpg'
+import './images/hand-macbook.png'
 
 import './scripts/modal.js';
 import './scripts/form_modal.js';
@@ -42,7 +42,7 @@ import './scripts/form_footer.js';
 
 // метрика
 const UMAMI_WEBSITE_ID = '1850ba22-b36b-492c-874b-d457556be6c8';
-const UMAMI_WEBSITE_URL = 'https://umami.flexgate.ru/umami.js'
+const UMAMI_WEBSITE_URL = 'https://umami.flexgate.ru/umami.js';
 const METRIKA_YANDEX = `
                           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
                           m[i].l=1*new Date();
@@ -230,7 +230,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
           trackEvents += ' #' + item.id.toUpperCase();
           if (trackEvents[1] != '#') {
             umami(trackEvents);
-            // console.log('setTimeOut --->', trackEvents);
           }
           trackEvents = '';
         }
